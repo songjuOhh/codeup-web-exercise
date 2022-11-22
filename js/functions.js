@@ -89,22 +89,22 @@ console.log( calculateTip(0.20, 20));
 console.log( calculateTip(0.25, 25.50));
 console.log( calculateTip(0.15, 33.42));
 
-
+//Customer friendly tip-calculating function
 function calculateTip2(tip, bill){
     console.log("Your total bill is $"+bill+".");
     console.log("You have put "+tip+"% for the tip.")
     //turning format of the tip into decimal
     let tipFormatted = "0."+tip;
     tipFormatted = parseFloat(tipFormatted);
-    let answer = tipFormatted * bill;
+    //transitioning from string value to number using parseFloat().
+    //limiting decimal number by using toFixed().
+    let answer = parseFloat(( tipFormatted * bill).toFixed(2));
     console.log("Your tip amount will be $"+answer+"." )
     return answer;
 }
 console.log( calculateTip2(20, 100));
 console.log( calculateTip2(20, 150));
 console.log( calculateTip2(15, 30));
-
-
 
 
 /**
@@ -115,7 +115,8 @@ console.log( calculateTip2(15, 30));
  */
 let totAmount = prompt("What is the total amount?")
 let askTip = prompt("How much percent do you want to tip?");
-calculateTip2(askTip, totAmount);
+let tipAnswer = calculateTip2(askTip, totAmount);
+alert("The calculated tip is $"+ tipAnswer.toFixed(2)+"." );
 
 /**
  * TODO:
@@ -131,10 +132,25 @@ calculateTip2(askTip, totAmount);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+// function shows as the same input & outcome
+
+// let priceI = prompt("What is the original price?")
+// let discountI = prompt("How much is the discount? (decimal)")
+// function applyDiscount(price, discount){
+//     let newPrice = price - (price * discount);
+//     return newPrice;
+// }
+
+
+// User-friendly function (shows percent)
 let priceI = prompt("What is the original price?")
-let discountI = prompt("How much is the discount? (decimal)")
+let discountI = prompt("How much percent is the discount?")
 function applyDiscount(price, discount){
-    let newPrice = price - (price * discount);
+    let discountFormatted = discount/100
+    let newPrice = price - (price * discountFormatted);
     return newPrice;
 }
-console.log("Your discounted price is $"+ applyDiscount(priceI, discountI)+".");
+
+
+alert("Your discounted price is $"+ applyDiscount(priceI, discountI)+".");
