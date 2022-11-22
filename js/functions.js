@@ -12,16 +12,7 @@
 function sayHello(name){
     console.log ("Hello, "+ name );
 }
-sayHello(name);
-
-// let person1 = "Billy",
-//     person2 = "Bob"
-//
-// function fight(person1, person2){
-//     console.log(person1 + " punched " + person2 + " right in the kisser.")
-// }
-// fight("person1", "person2");
-
+sayHello("Songju");
 
 
 
@@ -32,12 +23,12 @@ sayHello(name);
  *
  * console.log 'helloMessage' to check your work
  */
-let name1 = prompt("What is your name?")
+
 function sayHello(name){
     var helloMessage = "Hello, "+name ;
     console.log(helloMessage);
 }
-sayHello(name1);
+sayHello("Songju");
 
 
 /**
@@ -77,7 +68,7 @@ var random = Math.floor((Math.random() * 3) + 1);
 
 
 function isTwo(number){
-    let answer = (number == 2);
+    let answer = (number === 2);
     return answer;
 }
 console.log(isTwo(2));
