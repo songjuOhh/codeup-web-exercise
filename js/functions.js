@@ -90,6 +90,22 @@ console.log( calculateTip(0.25, 25.50));
 console.log( calculateTip(0.15, 33.42));
 
 
+function calculateTip2(tip, bill){
+    console.log("Your total bill is $"+bill+".");
+    console.log("You have put "+tip+"% for the tip.")
+    //turning format of the tip into decimal
+    let tipFormatted = "0."+tip;
+    tipFormatted = parseFloat(tipFormatted);
+    let answer = tipFormatted * bill;
+    console.log("Your tip amount will be $"+answer+"." )
+    return answer;
+}
+console.log( calculateTip2(20, 100));
+console.log( calculateTip2(20, 150));
+console.log( calculateTip2(15, 30));
+
+
+
 
 /**
  * TODO:
@@ -99,12 +115,7 @@ console.log( calculateTip(0.15, 33.42));
  */
 let totAmount = prompt("What is the total amount?")
 let askTip = prompt("How much percent do you want to tip?");
-
-function calculateTip(tip, bill){
-    let getTip = bill * (tip/100);
-    return getTip;
-}
-console.log("Your total tip is $"+calculateTip(askTip, totAmount)+".");
+calculateTip2(askTip, totAmount);
 
 /**
  * TODO:
