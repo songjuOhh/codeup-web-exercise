@@ -9,12 +9,11 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-function sayHello(name){
-    console.log ("Hello, "+ name +"!");
+function sayHello(myName){
+    let helloMessage = "Hello, " +myName+"!";
+    return helloMessage;
 }
-sayHello("Songju");
-
-
+console.log( sayHello("Songju"));
 
 /**
  * TODO:
@@ -24,12 +23,8 @@ sayHello("Songju");
  * console.log 'helloMessage' to check your work
  */
 
-function sayHello(name){
-    let helloMessage = "Hello, "+name +"!";
-    console.log(helloMessage);
-}
-sayHello("Songju");
-
+let helloMessage = sayHello("Songju");
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -37,12 +32,9 @@ sayHello("Songju");
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-let myName = prompt("What is Your name?");
-function sayHello(myName){
-    let helloMessage = "Hello, " +myName+"!";
-    console.log(helloMessage);
-}
-sayHello(myName);
+let myName = "Songju";
+let helloMessage1 = sayHello(myName);
+console.log( sayHello(helloMessage1));
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
