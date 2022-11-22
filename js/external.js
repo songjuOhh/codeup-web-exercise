@@ -4,6 +4,7 @@ alert("Welcome to my Website!");
 
 let favColor = "";
 
+//added loop in prevent user from no putting input
 while (favColor ===""){
     favColor=  prompt("What is your favorite color?");
 }
@@ -17,7 +18,7 @@ let dayB = prompt("How many days did you rent 'Bother Bear'?");
 let dayH = prompt("How many days did you rent 'Hercules'?");
 
 
-var totalPrice = (dayM*3) + (dayB*3) + (dayH*3) ;
+let totalPrice = (dayM*3) + (dayB*3) + (dayH*3) ;
 alert("Your total price is $"+totalPrice+".");
 
 // Exercise 3-2
@@ -25,7 +26,7 @@ let whourG = prompt("what is your work hour for google?");
 let whourA = prompt("what is your work hour for Amazon?");
 let whourF = prompt("what is your work hour for Facebook?");
 
-var totalWage = (whourG * 400) + (whourA * 380) + (whourF *350);
+let totalWage = (whourG * 400) + (whourA * 380) + (whourF *350);
 alert("Your total wage for this week is $"+ totalWage +".");
 
 

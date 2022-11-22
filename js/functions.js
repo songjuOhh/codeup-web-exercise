@@ -10,7 +10,7 @@
  */
 
 function sayHello(name){
-    console.log ("Hello, "+ name );
+    console.log ("Hello, "+ name +"!");
 }
 sayHello("Songju");
 
@@ -25,7 +25,7 @@ sayHello("Songju");
  */
 
 function sayHello(name){
-    var helloMessage = "Hello, "+name ;
+    let helloMessage = "Hello, "+name +"!";
     console.log(helloMessage);
 }
 sayHello("Songju");
@@ -37,16 +37,17 @@ sayHello("Songju");
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-var myName = prompt("What is Your name?");
+let myName = prompt("What is Your name?");
 function sayHello(myName){
-    console.log("Hello, "+myName);
+    let helloMessage = "Hello, " +myName+"!";
+    console.log(helloMessage);
 }
 sayHello(myName);
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+let random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
