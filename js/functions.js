@@ -149,7 +149,7 @@ let discountI = prompt("How much percent is the discount?")
 function applyDiscount(price, discount){
     let discountFormatted = discount/100
     let newPrice = price - (price * discountFormatted);
-    return newPrice;
+    return newPrice.toFixed(2);
 }
 
 
