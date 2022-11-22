@@ -34,7 +34,7 @@ console.log(helloMessage);
  */
 let myName = "Songju";
 let helloMessage1 = sayHello(myName);
-console.log( sayHello(helloMessage1));
+console.log(helloMessage1);
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
