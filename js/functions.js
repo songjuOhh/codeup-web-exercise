@@ -15,6 +15,11 @@ function sayHello(myName){
 }
 console.log( sayHello("Songju"));
 
+
+//Arrow function
+let sayHelloArrow = (myName) => {return `Hello, ${myName}!`};
+console.log( sayHelloArrow("Mike"))
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -60,12 +65,18 @@ let random = Math.floor((Math.random() * 3) + 1);
  */
 
 
+
 function isTwo(number){
     let answer = (number === 2);
     return answer;
 }
 console.log(isTwo(2));
 console.log(isTwo(random));
+
+//Arrow function
+let isTwoArrow = (number) => {return  number === 2};
+console.log(isTwoArrow(2));
+console.log(isTwoArrow(random));
 
 
 
@@ -81,6 +92,7 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+// function shows as the same input & outcome
 function calculateTip(tip, bill){
     let getTip = (bill * tip);
     return getTip;
@@ -88,6 +100,10 @@ function calculateTip(tip, bill){
 console.log( calculateTip(0.20, 20));
 console.log( calculateTip(0.25, 25.50));
 console.log( calculateTip(0.15, 33.42));
+
+//Arrow function
+let calculateTipArrow = (tip, bill) => {return (bill * tip)};
+console.log(calculateTipArrow(.20, 20))
 
 //Customer friendly tip-calculating function
 function calculateTip2(tip, bill){
@@ -105,6 +121,10 @@ function calculateTip2(tip, bill){
 console.log( calculateTip2(20, 100));
 console.log( calculateTip2(20, 150));
 console.log( calculateTip2(15, 30));
+
+//Arrow function
+let calculateTip2Arrow = (tip,bill) => {return (bill-(bill*tip/100)).toFixed(2)};
+console.log( calculateTip2Arrow(50,100));
 
 
 /**
@@ -151,6 +171,4 @@ function applyDiscount(price, discount){
     let newPrice = price - (price * discountFormatted);
     return newPrice.toFixed(2);
 }
-
-
 alert("Your discounted price is $"+ applyDiscount(priceI, discountI)+".");
