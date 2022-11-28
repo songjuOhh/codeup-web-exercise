@@ -201,17 +201,19 @@ console.log( calculateTotal(5, 100));
 let totalBill = prompt("What is the total bill?");
 var luckyNumber = Math.floor(Math.random() * 6);
 
+//Makes sure the input is a number
 if(isNaN(totalBill)!==true) {
     alert("and Your lucky number is " + luckyNumber+"...");
     alert("Your total bill was " +totalBill+"...");
 
-    //Returning result
+    //Returning the result
     if (luckyNumber > 0) {
         alert("Congrats!!! Now your new total will be $" + calculateTotal(luckyNumber, totalBill) + "!!!");
     } else {
         alert("Aw.. your new total will be $" + calculateTotal(luckyNumber, totalBill) + "... yeah it is the same..");
     }
 }else{
+    //Quit the script if the input is not a number
     alert("It is not a number");
 }
 
@@ -235,18 +237,15 @@ if(isNaN(totalBill)!==true) {
  */
 
 let confirmUser = confirm("Would you like to enter a number?");
-
-
-
-
+let enteredNumber;
 if(confirmUser === true){
 
-    let enteredNumber = prompt("Please tell me your number.");
+    enteredNumber = prompt("Please tell me your number.");
     if(isNaN(enteredNumber) !== true) {
         // try isNan as well
 
+        //Making sure input stay as a number
         enteredNumber = parseInt(enteredNumber);
-
 
         //Even or odd
         if (enteredNumber % 2 === 0) {
@@ -273,3 +272,6 @@ if(confirmUser === true){
 }else{
     alert("Sorry, I won't bother you.");
 }
+
+//or you can use functions such as...
+// isEvenOrOdd, add100, isNum...

@@ -213,12 +213,128 @@ function notZero (input){
 }
 console.log( notZero(0));
 
+
 function lowerCase (string){
     var lowered = string.toLowerCase();
     return lowered;
 }
+console.log(lowerCase("YeaahH"));
 
-console.log(lowerCase("Yeaah"));
 
+function double(n){
+    let doubled;
+    doubled = n *2;
+    return doubled;
+}
+console.log(double(4));
+
+
+function triple(n){
+    let result;
+    result = n *3;
+    return result;
+}
+console.log(triple(4));
+
+
+function quadruple (n){
+    let result;
+    result = n *4;
+    return result;
+}
+console.log(quadruple(4));
+
+
+function half (n){
+    let result;
+    result = n /4;
+    return result;
+}
+console.log(half(4));
+
+function subtract (a, b){
+    let result;
+    result = a-b;
+    return result;
+}
+console.log(subtract(4,2));
+
+
+function multiply (a, b){
+    let result;
+    result = a*b;
+    return result;
+}
+console.log(multiply(4,2));
+
+
+function divide (a, b){
+    let result;
+    result = a/b;
+    return result;
+}
+console.log(divide(4,2));
+
+
+function remainder (a, b){
+    let result;
+    result = a%b;
+    return result;
+}
+console.log(remainder(2,2));
+
+
+function modulo (a,b){
+    let result;
+    result = a%b;
+    return result;
+}
+console.log(modulo(7,2));
+
+
+function cube (n){
+    let result;
+    result = n*n*n;
+    return result;
+}
+console.log( cube(3));
+
+
+function squareRoot(n){
+    let result;
+    result = Math.sqrt(n);
+    return result;
+}
+console.log( squareRoot(4));
+
+
+function cubeRoot(n){
+    let result;
+    result = Math.cbrt(n);
+    return result.toFixed(2);
+}
+console.log( cubeRoot(4));
+
+
+function invertSign(n){
+    if(isNaN(n)!==true) {
+        let result;
+        result = -(n);
+        return result;
+    }else{
+        return false;
+    }
+}
+console.log( invertSign(4));
+console.log( invertSign("n"));
+
+
+function degreesToRadians(number){
+    let result;
+    let pi = Math.PI;
+    result = number *(pi/180);
+    return result;
+}
+console.log( squareRoot(4));
 
 
