@@ -1,3 +1,5 @@
+console.log("#2");
+//#2
 function showMultiplicationTable (number){
     for (var i = 1; i<11; i++){
         let multipled = number * i;
@@ -15,8 +17,8 @@ showMultiplicationTable(7);
 
 // let randomNumber = number[Math.floor(Math.random() * colors.length)];
 // var luckyNumber = Math.floor(Math.random() * 6);
-
-
+console.log("");
+console.log("#3 - Version 1");
 //Version 1: basic for loop with a condition
 for(var i =0; i<3; i++){
     var randomNumber = Math.floor(Math.random()*200)+20;
@@ -26,7 +28,9 @@ for(var i =0; i<3; i++){
         console.log(randomNumber + " is odd");
     }
 }
+console.log("");
 
+console.log("#3 - Version 2");
 //Version 2: used function for input
 function randomEvenOdd (min, max){
     for(var i = 0; i<3; i++) {
@@ -41,7 +45,9 @@ function randomEvenOdd (min, max){
 }
 randomEvenOdd(200, 20);
 
+console.log("");
 
+console.log("#4");
 for(var i = 1; i<10; i++){
     let number = '';
     for(var j = 0; j<i; j++){
@@ -49,11 +55,18 @@ for(var i = 1; i<10; i++){
     }
     console.log(number);
 }
+
+
+console.log("");
+console.log("#5 - Version 1");
 // Version 1: used for loop only, but hard coded
 for(var i = 0; i<20; i++){
     console.log(100-(i*5));
 }
 
+console.log("");
+
+console.log("#5 - Version 2");
 // Version 2: used function for input
 function minusFive (number){
     let outcome ='';

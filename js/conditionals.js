@@ -23,19 +23,26 @@
  */
 
 // function analyzeColor(input){
-//     if(input == "blue"){
-//         console.log("blue is the color of the sky");
-//     }else if(input == "red"){
-//         console.log("Strawberries are red");
-//     }else if(input == "yellow"){
-//         console.log("Yum yum yellow banana");
+//     let toLower = input.toLowerCase();
+//     let result;
+//     if(toLower === "blue"){
+//         result = "blue is the color of the sky";
+//         return result;
+//     }else if(toLower === "red"){
+//         result = "Strawberries are red";
+//         return result;
+//     }else if(toLower === "yellow"){
+//         result = "Yum yum yellow banana";
+//         return result;
 //     }else{
-//         console.log("please enter different color.")
+//         result = "please enter different color.";
+//         return result;
 //     }
 // }
-// analyzeColor("blue");
-// analyzeColor("red");
-// analyzeColor("yellow");
+// console.log (analyzeColor("blue"));
+// console.log (analyzeColor("red"));
+// console.log (analyzeColor("banana"));
+
 
 // ** above code has been commented out due to next step **
 
@@ -61,29 +68,54 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
+// function analyzeColor(input){
+//     let color = input.toLowerCase();
+//     switch (color){
+//         case "blue":
+//         return "blue is the color of the sky";
+//         break;
+//
+//         case "red":
+//         return "Strawberries are red";
+//         break;
+//
+//         case "yellow":
+//         return "Yum yum yellow banana";
+//         break;
+//
+//         default:
+//         return "please enter different color.";
+//         break;
+//     }
+// }
+
+//setting 'result' as variable will make it run better
 function analyzeColor(input){
-    let color = input;
+    let color = input.toLowerCase();
+    let result;
     switch (color){
         case "blue":
-        console.log("blue is the color of the sky");
-        break;
+            result = "blue is the color of the sky";
+            break;
 
         case "red":
-        console.log("Strawberries are red");
-        break;
+            result = "Strawberries are red";
+            break;
 
         case "yellow":
-        console.log("Yum yum yellow banana");
-        break;
+            result = "Yum yum yellow banana";
+            break;
 
         default:
-        console.log("please enter different color.");
-        break;
+            result = "please enter different color.";
+            break;
     }
+    return result;
 }
-analyzeColor("blue");
-analyzeColor("red");
-analyzeColor("yellow");
+
+console.log( analyzeColor("blue"));
+console.log( analyzeColor("red"));
+console.log( analyzeColor("yellow"));
 
 /**
  * TODO:
@@ -92,8 +124,12 @@ analyzeColor("yellow");
  * function to show it to the user.
  */
 
+// let askColor = prompt("Please tell me a color.");
+// console.log( analyzeColor(askColor));
+
 let askColor = prompt("Please tell me a color.");
-analyzeColor(askColor);
+let askColorResult = analyzeColor(askColor);
+console.log( askColorResult);
 
 /* ########################################################################## */
 
@@ -118,39 +154,36 @@ analyzeColor(askColor);
  */
 
 function calculateTotal(luckyNum,totAmount){
-    let finalAmount;
+    let finalAmount, discount;
     if(luckyNum === 0){
-        finalAmount = totAmount;
-        console.log(finalAmount);
+        discount = 0;
 
     }else if(luckyNum === 1){
-        finalAmount = totAmount - (totAmount * .1);
-        console.log(finalAmount);
+        discount = .1;
 
     }else if(luckyNum === 2){
-        finalAmount = totAmount - (totAmount * .25);
-        console.log(finalAmount);
+        discount = .25
 
     }else if(luckyNum === 3){
-        finalAmount = totAmount - (totAmount * .35);
-        console.log(finalAmount);
+        discount = .35
 
     }else if(luckyNum === 4){
-        finalAmount = totAmount - (totAmount * .5);
-        console.log(finalAmount);
+        discount = .5
 
     }else if(luckyNum === 5){
-        finalAmount = totAmount - (totAmount);
-        console.log(finalAmount);
+        discount = 1
 
     }else{
-        console.log("invalid lucky number");
+        return "invalid lucky number";
     }
-    return finalAmount;
+    finalAmount = totAmount - (totAmount * discount);
+
+    return finalAmount.toFixed(2);
 }
-calculateTotal(0, 100);
-calculateTotal(4, 100);
-calculateTotal(5, 100);
+
+console.log( calculateTotal(0, 100));
+console.log( calculateTotal(4, 100));
+console.log( calculateTotal(5, 100));
 
 /**
  * TODO:
@@ -167,14 +200,20 @@ calculateTotal(5, 100);
 
 let totalBill = prompt("What is the total bill?");
 var luckyNumber = Math.floor(Math.random() * 6);
-alert("and Your lucky number is " + luckyNumber+"...");
-alert("Your total bill was " +totalBill+"...");
-if(luckyNumber > 0){
-    alert("Congrats!!! Now your new total will be $"+ calculateTotal(luckyNumber,totalBill)+"!!!");
-}else{
-    alert("Aw.. your new total will be $"+ calculateTotal(luckyNumber,totalBill)+"... yeah it is the same..");
-}
 
+if(isNaN(totalBill)!==true) {
+    alert("and Your lucky number is " + luckyNumber+"...");
+    alert("Your total bill was " +totalBill+"...");
+
+    //Returning result
+    if (luckyNumber > 0) {
+        alert("Congrats!!! Now your new total will be $" + calculateTotal(luckyNumber, totalBill) + "!!!");
+    } else {
+        alert("Aw.. your new total will be $" + calculateTotal(luckyNumber, totalBill) + "... yeah it is the same..");
+    }
+}else{
+    alert("It is not a number");
+}
 
 /**
  * TODO:
@@ -198,6 +237,8 @@ if(luckyNumber > 0){
 let confirmUser = confirm("Would you like to enter a number?");
 
 
+
+
 if(confirmUser === true){
 
     let enteredNumber = prompt("Please tell me your number.");
@@ -205,6 +246,7 @@ if(confirmUser === true){
         // try isNan as well
 
         enteredNumber = parseInt(enteredNumber);
+
 
         //Even or odd
         if (enteredNumber % 2 === 0) {
