@@ -7,32 +7,41 @@ while (i <17){
     i++;
 }
 
-
 function canGoHome(cones){
     let randomCones = Math.floor(Math.random()*50)+50;
     let allCones = parseFloat(randomCones);
     console.log ("You have "+allCones+" cones today.");
-    Math.floor(Math.random()*5)+1;
-    let soldCones = Math.floor(Math.random()*5)+1;
-
+    // Math.floor(Math.random()*5)+1;
+    // let sellingCones = Math.floor(Math.random()*5)+1;
+    let remains = allCones;
     var i = 0;
     do {
-        let remains = allCones;
+        let sellingCones = Math.floor(Math.random()*5)+1;
 
-        if(remains >= soldCones){
-            remains = allCones - soldCones;
-            console.log(soldCones + " cones sold...");
+        if(remains >= sellingCones){
+            remains = remains - sellingCones;
 
-        }else if(soldCones > remains) {
-            console.log("Cannot sell you" + soldCones +"cones. I only have "+remains);
+            // cone or cones
+            if(sellingCones <= 1 || remains <=1){
+                console.log(sellingCones + " cone sold...");
+                console.log(remains+ " cone left");
+            }else {
+                console.log(sellingCones + " cones sold...");
+                console.log(remains + " cones left");
+            }
+            console.log("");
 
-        } else if(remains ===0){
+        }else if(sellingCones > remains && remains !==0) {
+            console.log("Cannot sell you " + sellingCones +" cones. I only have "+remains);
+            console.log("")
+
+        } else if( remains === 0){
             console.log("Yay! I sold them all!");
-        }
-        i++;
-    } while (i<10);
-}
+            break;
+        } i++;
 
+    } while (i<50);
+}
 canGoHome("");
 
 
