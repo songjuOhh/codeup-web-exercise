@@ -335,6 +335,46 @@ function degreesToRadians(number){
     result = number *(pi/180);
     return result;
 }
-console.log( squareRoot(4));
+console.log( degreesToRadians(4));
+
+function radiansToDegrees (number){
+    let result;
+    let pi = Math.PI;
+    result = number *180/pi;
+    return result;
+}
+console.log( radiansToDegrees(4));
+
+function rollDice (number){
+    let result;
+    result = Math.floor(Math.random()*6);
+    return result;
+}
+console.log(rollDice());
+
+
+
+// Version 1
+function removeFirstCharacter (input){
+
+    if(typeof (input) ==='string'){
+        let result;
+        result = input.slice(1);
+        return result;
+    }else if(input.length === 0){
+        return input;
+    }
+    return  false;
+}
+console.log( removeFirstCharacter(""));
+
+
+// Version 2
+function removeFirstCharacter2(input){
+    if(typeof input !=='string') return false;
+    return (input.length === 0)? input : input.slice(1);
+}
+
+console.log( removeFirstCharacter2(""));
 
 

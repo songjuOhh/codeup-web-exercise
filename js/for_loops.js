@@ -56,9 +56,10 @@ for(var i = 1; i<10; i++){
     console.log(number);
 }
 
-
 console.log("");
 console.log("#5 - Version 1");
+
+
 // Version 1: used for loop only, but hard coded
 for(var i = 0; i<20; i++){
     console.log(100-(i*5));
