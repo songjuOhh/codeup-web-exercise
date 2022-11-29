@@ -44,10 +44,10 @@ function letsSellCones(cones){
         }else if(sellingCones > remains && remains !==0) {
 
             // cone vs cones
-            if (remains ===1){
-                console.log("Cannot sell you " + sellingCones +" cone. I only have "+remains);
+            if (sellingCones ===1){
+                console.log("Cannot sell you " + sellingCones +" cone. I only have "+remains+"...");
             } else {
-                console.log("Cannot sell you " + sellingCones + " cones. I only have " + remains);
+                console.log("Cannot sell you " + sellingCones + " cones. I only have " + remains+"...");
             } console.log("");
 
         //If it is 0, print a sentence & break
