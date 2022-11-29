@@ -24,10 +24,10 @@ function canGoHome(cones){
             // cone or cones
             if(sellingCones <= 1 || remains <=1){
                 console.log(sellingCones + " cone sold...");
-                console.log(remains+ " cone left");
+                console.log("       ("+remains+ " cone left)");
             }else {
                 console.log(sellingCones + " cones sold...");
-                console.log(remains + " cones left");
+                console.log("       ("+remains + " cones left)");
             }
             console.log("");
 
