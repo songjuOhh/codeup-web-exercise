@@ -1,5 +1,9 @@
-console.log("Below is #3 Break and Continue exercise")
+console.log("Break and Continue #2");
+console.log("");
+
+
 let askNumber = prompt("PLease pick a number from 1 to 50");
+
 
 askNumber = parseInt(askNumber);
 console.log("Number to skip is: " + askNumber);
@@ -31,6 +35,9 @@ for(var i = 0; i<50; i++) {
 }
 
 
+console.log("");
+console.log("Break and Continue #3");
+console.log("");
 
 //Created function to create loop for invalid input
 function askNumForSkip (askNumber2){
