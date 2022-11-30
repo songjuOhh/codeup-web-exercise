@@ -409,9 +409,15 @@ console.log("");
 console.log("#2");
 console.log("");
 function replaceWith (input1 , input2){
-    let output;
-    output = input1.replaceAll(input1,input2);
-    return output;
+    if(input1.includes(input2)) {
+        return input1.remove(input2);
+    }else if(input1){
+    }else{
+        return ''+input1+input2;
+    }
+    // let output;
+    // output = input1.replaceAll(input1,input2);
+    // return output;
 
 }
 console.log(replaceWith("Hello my is name is Songju","my Songju" ));
