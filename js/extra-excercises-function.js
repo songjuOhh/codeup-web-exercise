@@ -410,8 +410,12 @@ console.log("#2");
 console.log("");
 function replaceWith (input1 , input2){
     if(input1.includes(input2)) {
-        return input1.remove(input2);
-    }else if(input1){
+        let removed;
+        removed = input1.slice(input2);
+        return removed;
+    }else if(input2.includes(input1)){
+        let removed = input2.slice(input1);
+        return ''+removed+input1;
     }else{
         return ''+input1+input2;
     }
