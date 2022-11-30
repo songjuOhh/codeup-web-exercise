@@ -3,36 +3,43 @@ console.log("");
 
 
 let askNumber = prompt("PLease pick a number from 1 to 50");
+if(askNumber %2 !==0){
+
+    askNumber = parseInt(askNumber);
+    console.log("Number to skip is: " + askNumber);
+    console.log("");
+    for(var i = 0; i<50; i++) {
+
+        if (isNaN(askNumber) !== true) {
 
 
-askNumber = parseInt(askNumber);
-console.log("Number to skip is: " + askNumber);
-console.log("");
-for(var i = 0; i<50; i++) {
+            if (i === askNumber) {
+                console.log("Yikes! Skipping number: " + i);
+                continue;
+            }else if(i%2 !==0){
+                console.log("Here is an odd number: " + i);
+            }
 
-    if (isNaN(askNumber) !== true) {
+            // if (i % 2 !== 0) {
+            //     console.log("Here is an odd number: " + i);
+            //
+            // } else if (i === 27) {
+            //     break;
+            // }
+            // text += "Yikes! Skipping number: " + askNumber;
 
-
-        if (i === askNumber) {
-            console.log("Yikes! Skipping number: " + i);
-            continue;
-        }else if(i%2 !==0){
-            console.log("Here is an odd number: " + i);
+        } else {
+            console.log("You put invalid input.");
+            break;
         }
-
-        // if (i % 2 !== 0) {
-        //     console.log("Here is an odd number: " + i);
-        //
-        // } else if (i === 27) {
-        //     break;
-        // }
-        // text += "Yikes! Skipping number: " + askNumber;
-
-    } else {
-        console.log("You put invalid input.");
-        break;
     }
+
+}else{
+    alert ("Please enter odd number.");
 }
+
+
+
 
 
 console.log("");

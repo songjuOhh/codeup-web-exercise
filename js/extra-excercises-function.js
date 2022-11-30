@@ -347,11 +347,10 @@ console.log( radiansToDegrees(4));
 
 function rollDice (number){
     let result;
-    result = Math.floor(Math.random()*6);
+    result = Math.floor(Math.random()*number)+1;
     return result;
 }
-console.log(rollDice());
-
+console.log(rollDice(6));
 
 
 // Version 1
@@ -366,7 +365,7 @@ function removeFirstCharacter (input){
     }
     return  false;
 }
-console.log( removeFirstCharacter(""));
+console.log( removeFirstCharacter("OHHHH"));
 
 
 // Version 2
@@ -375,6 +374,100 @@ function removeFirstCharacter2(input){
     return (input.length === 0)? input : input.slice(1);
 }
 
-console.log( removeFirstCharacter2(""));
+console.log( removeFirstCharacter2("Yeees"));
+
+
+// Write a function called doMath(operator, a, b) that takes 3 parameters.
+// The first parameter is the name of the math function you want to apply.
+// a and b are the two numbers to run that function on.
+
+function doMath(operator, a, b){
+    let answer;
+    answer = eval(`Number(a) ${operator} Number(b)`);
+    return answer;
+}
+console.log(doMath('+',4,2));
+
+//Even More Function Bonuses
+console.log("");
+console.log("Even More Function Bonuses");
+console.log("---------------------------");
+console.log("");
+
+//#1
+console.log("");
+console.log("#1");
+console.log("");
+
+function countWhites (input){
+    return "Your string has "+ input.indexOf(" ")+" white spaces";
+}
+console.log(countWhites("Hello My Name is Songjuuu yas."));
+
+//#2
+console.log("");
+console.log("#2");
+console.log("");
+function replaceWith (input1 , input2){
+    let output;
+    output = input1.replaceAll(input1,input2);
+    return output;
+
+}
+console.log(replaceWith("Hello my is name is Songju","my Songju" ));
+
+// #3
+console.log("");
+console.log("#3");
+console.log("");
+
+function endWithA (input){
+    if (input.charAt(input.length-1) !== "a"){
+        return false;
+    }else{ return true};
+}
+console.log(endWithA("india"));
+
+// #4
+console.log("");
+console.log("#4");
+console.log("");
+
+function countWhitesAtBeginning (input){
+
+    const regex = /\w+\s/;
+    const result = regex.exec(input);
+    //.index will return the index value of the result
+    return result.index;
+    // const finalOutcome = toString(result).replace(/\D/g, '');
+    // return finalOutcome;
+
+    // return "Your string has "+ input.indexOf(" ")+" white spaces";
+}
+console.log(countWhitesAtBeginning("          Hello My Name is Songjuuu yas.")); // 10
+
+// #5
+function returnTrueMessage() {  return "Hey, it's true!";}
+function returnFalseMessage() {  return "Hey, it's false!";}
+function returnMessage(input){
+    if(input === true){
+        return returnTrueMessage();
+    }else if(input === false){
+        return returnFalseMessage();
+    }
+}
+console.log( returnMessage(false));
+
+//#6
+function willLoginUser(username, password, age, admin){
+    if(admin === true && username !== password ) {
+        return true;
+    }else if(admin !== true && username !== password && age >18){
+        return true;
+    }else{
+        return false;
+    }
+}
+console.log( willLoginUser("ossong","ossong33",19,false));
 
 
