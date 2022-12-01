@@ -34,27 +34,47 @@ console.log("#3 - Version 2");
 //Version 2: used function for input
 function randomEvenOdd (min, max){
     for(var i = 0; i<3; i++) {
-
+        //generate random number between min & max
         var randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
         if (randomNumber % 2 === 0) {
             console.log(randomNumber + " is even");
         } else if (randomNumber % 2 === 1) {
             console.log(randomNumber + " is odd");
         }
+
+        // let randomNum = randomEvenOdd(20,200);
+        // let isEven = randomNum %2 ===0;
+        // let answer =  `${randomNum} is ${isEven}`;even : odd;
     }
 }
-randomEvenOdd(200, 20);
+randomEvenOdd(20, 200);
 
 console.log("");
-
 console.log("#4");
-for(var i = 1; i<10; i++){
+//Version 1 number pyramud
+for(let i = 1; i<10; i++){
     let number = '';
-    for(var j = 0; j<i; j++){
+    for(let j = 1; j<=i; j++){
         number += i;
     }
     console.log(number);
 }
+
+//Version 2 number pyramid
+for(let i = 0; i<9; i++){
+    let answer = String(i+1).repeat(i+1);
+    console.log(answer);
+}
+
+for(let i = 1; i<10; i++){
+    let number = 0;
+    for(let j = 1; j<=i; j++){
+        number += 1;
+    }
+    console.log(number);
+}
+
+
 
 console.log("");
 console.log("#5 - Version 1");
@@ -80,3 +100,8 @@ function minusFive (number){
     }
 }
 minusFive(50);
+
+// Version 3
+for(let y = 100; y>=5; y-=5){
+    console.log(y);
+}
