@@ -11,7 +11,7 @@ showMultiplicationTable(7);
 
 
 // for (var i = 0, j = 9; i < 10; i++, j--) {
-//     console.log('for loop iteration #' + i + ', j = ' + j);
+//     console.log('for loop i #' + i + ', j = ' + j);
 // }
 
 
