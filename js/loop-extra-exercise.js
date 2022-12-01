@@ -61,19 +61,19 @@ console.log("Version 3");
 let count = 0;
 while (count<50) {
 
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 5000; i++) {
 
         if (i === 2 || i === 3 || i === 5 || i === 7) {
             count++;
-            console.log(i);
-        } else if (i % 2 === 0 || i % 3 === 0 || i % 5 === 0 || i % 7 === 0) {
+            console.log(i+ " - so far, counted "+ count);
+        } else if (i % 2 === 0 || i % 3 === 0 || i % 5 === 0 || i % 7 === 0 ||i % 11===0) {
             continue;
 
         }else if(count ===50){
             break;
         } else {
             count++;
-            console.log(i);
+            console.log(i + " - so far, counted "+ count);
         }
     }
     if(count === 50){
