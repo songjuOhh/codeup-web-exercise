@@ -59,6 +59,7 @@ console.log("");
 //Version3
 console.log("Version 3");
 let count = 0;
+let j = 0;
 while (count<50) {
 
     for (var i = 0; i < 5000; i++) {
@@ -76,6 +77,7 @@ while (count<50) {
             console.log(i + " - so far, counted "+ count);
         }
     }
+    j++;
     if(count === 50){
         break;
     }
@@ -110,6 +112,93 @@ function isPrime(num) {
     return num > 1;
 }
 console.log( isPrime(51));
+
+// Create a function, moveDigitsTowardFive, that takes in an integer and
+// returns the integer with all the digits moved one closer to the number five.
+// If a digit is five, it should remain the same.
+// You will likely need to convert the number to a string to manipulate each digit
+// and then convert the output back to a number. Assume only integer inputs.
+
+// moveDigitsTowardFive(5) // returns 5
+// moveDigitsTowardFive(159) // returns 258
+// moveDigitsTowardFive(456) // returns 555
+// moveDigitsTowardFive(236) // returns 345
+// moveDigitsTowardFive(19286538) // returns 28375547
+// moveDigitsTowardFive(0000) // returns 1111
+// moveDigitsTowardFive(99) // returns 88
+
+
+console.log("");
+console.log("Exercise 4");
+// function moveDigitsTowardFive(number){
+//     let toString = number.toString();
+//     let toArray;
+//     toArray = Array.from( toString);
+//     let numArray = toArray;
+//     // const findFive =  number.match(/[5]/gi).length
+//
+//
+//     numArray.map(element, index) =>{
+//         return
+//     }
+//
+//
+//
+// }
+
+console.log(moveDigitsTowardFive(34535));
+
+
+
+
+
+
+
+
+
+
+
+
+// Create a function, replaceVowels, that takes in two strings as input.
+// The first string input may have 0 to many characters.
+// The second string input may have 0 to 1 character.
+// The function will return a string that is the equivalent of the first string
+// but every vowel is replaced with the second string.
+// Assume any letter character in the inputs will be in lowercase.
+//
+//     Examples...
+//
+// replaceVowels('cat', 'z') // returns 'czt'
+// replaceVowels('apple', 'z') // returns 'zpplz'
+// replaceVowels('codeup', '.') // returns 'c.d..p'
+// replaceVowels('', '.') // returns ''
+// replaceVowels('aaa', '.') // returns '...'
+// replaceVowels('bbb', '.') // returns 'bbb'
+//
+
+console.log("");
+console.log("Exercise #5");
+
+function replaceVowels (input, a){
+    let original, replaceA, result;;
+    original= input.toString();
+    replaceA = a;                                   //RegEx = Regular Expression
+    const count = input.match(/[aeiou]/gi).length;  //regex pattern is used with math()
+                                                    //with RegEx & match(), counted vowels.
+
+    for (var i =0; i<input.length; i++){        //repeat for the length of the input
+        original = original.toLowerCase();
+        if(count > 0){                          //if 'count' finds more than 1 vowel, replace
+            result = original.replaceAll("a",replaceA );
+            console.log(result);
+            break;
+        }else{                                  //if not, just return input
+            console.log(original);
+            break;
+        }
+    }
+}
+replaceVowels("apple",".");
 
 
 
