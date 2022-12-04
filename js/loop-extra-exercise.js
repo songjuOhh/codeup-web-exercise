@@ -129,24 +129,82 @@ console.log( isPrime(51));
 
 
 console.log("");
-console.log("Exercise 4");
-// function moveDigitsTowardFive(number){
-//     let toString = number.toString();
-//     let toArray;
-//     toArray = Array.from( toString);
-//     let numArray = toArray;
-//     // const findFive =  number.match(/[5]/gi).length
+console.log("Exercise #4");
+function moveDigitsTowardFive(number) {
+    let numberString = number.toString();
+    console.log(numberString);
+    let numberArray = numberString.toString().split('');
+    console.log(numberArray);
+    numberArray = numberArray.map(Number);
+    console.log(numberArray);
+
+    for (let i = 0; i < numberArray.length; i++) {
+        if (numberArray[i] > 5) {
+            numberArray[i]--;
+        } else if (numberArray[i] < 5) {
+            numberArray[i]++;
+        }
+    }
+    let result;
+    result = numberArray.join('');
+    return result;
+}
+console.log( moveDigitsTowardFive(345689));
+
+    // toArray = Array.from( toString);
+    // let numArray = toArray;
+
+
+
+    // numberArray.forEach(function (num, index) {
+    //     let numNumber = parseInt(num);
+    //     if (numNumber < 5) {
+    //         numNumber++;
+    //         numberArray[index] = numNumber;
+    //     } else if (numNumber > 5) {
+    //         numNumber--;
+    //         numberArray[index] = numNumber;
+    //     }
+    //     // debugger;
+    // });
+
+    // for(let i = 0; i<10; i++){
+    //     let numNumber = parseInt(numberArray[i]);
+    //         if (numNumber < 5) {
+    //             numNumber++;
+    //             numberArray[i] = numNumber;
+    //         } else if (numNumber > 5) {
+    //             numNumber--;
+    //             numberArray[i] = numNumber;
+    //         }
+    // }
+    //
+    // let result;
+    // result = parseInt(numberArray.join());
+    // return result;
+// }
+
+// console.log( moveDigitsTowardFive(345689));
+//
+//     for (var i = 0; i<numArray.length; i++){
+//         if(numArray[i]<5){
+//             result += ( parseFloat(numArray[i])+1) ;
+//         }else if(numArray[i]===5){
+//             result += ( parseFloat( numArray[i]));
+//         }else if(numArray[i]>5){
+//             result += (parseFloat(numArray[i])-1);
+//         }
+//     }
+//     return result;
+// }
+// console.log( moveDigitsTowardFive(343578));
+    // const findFive =  number.match(/[5]/gi).length
 //
 //
 //     numArray.map(element, index) =>{
 //         return
 //     }
-//
-//
-//
 // }
-
-console.log(moveDigitsTowardFive(34535));
 
 
 

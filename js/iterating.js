@@ -73,7 +73,11 @@
     function last(array3){
         return array3[array3.length-1]
     }
+
+    console.log( first(array));
+    console.log(second(array));
     console.log( last(array));
+
 
 
 
