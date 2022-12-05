@@ -28,12 +28,14 @@
      */
 
     let joinedPlanet = planetsArray.join("<br>");
+
     console.log(joinedPlanet);
+    document.write(joinedPlanet);  //Apply on HTML
+
 
     let joinedPlanet2 = `<ul><li>${planetsArray.join("</li><li>")}</li></ul>`;
     console.log(joinedPlanet2);
+    document.write(joinedPlanet2);   //Apply on HTML
     // console.log(`<ul><li> ${joinedPlanet2.join("</li>")} </ul>`);
-
-
 
 })();

@@ -46,15 +46,12 @@
      -  The splice() method changes the contents of an array by removing or replacing
         existing elements and/or adding new elements in place
 
-        splice(start)
-        splice(start, deleteCount)
-        splice(start, deleteCount, item1)
+        splice(start)                                 // array.splice(indexNum);
+        splice(start, deleteCount)                    // array.splice(indexNum, number);
+        splice(start, deleteCount, item1)             // array.splice(indexNum, number, string, ...);
         splice(start, deleteCount, item1, item2, itemN)
 
      */
-
-
-
 
     console.log('Finding and logging the index of "Earth" in the planets array.');
     console.log(planets.indexOf("Earth"));
