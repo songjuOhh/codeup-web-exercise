@@ -150,12 +150,15 @@ console.log(pies);
 
 // custom sorting: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
-// const numbers = [1, 11, 2, 5];
-// function compareNumbers(a, b) {
-//     return a - b;
-// }
-// numbers.sort(compareNumbers);
-// console.log(numbers);
+const numbers = [1, 11, 2, 5];
+console.log(numbers);
+
+function compareNumbers(a, b) {
+    return a - b;
+}
+
+numbers.sort(compareNumbers);   // passed function to sort method
+console.log(numbers);     // [1, 2, 5, 11]
 
 
 // ============================= Reversing
@@ -170,8 +173,14 @@ console.log(pies);
 
 
 
-// pies.sort().reverse(); // change the original value
-// console.log(pies);
+console.log(pies);  //['apple', 'cherry', 'cream pie', 'huckleberry', 'key lime', 'lemon pie', 'pecan pie', 'rhubarb']
+pies.sort(); // change the original value
+const reversedPies = pies.slice().reverse();
+console.log("pies.sort();");
+console.log(pies);
+console.log("const reversedPies = pies.slice().reverse();");
+console.log("console.log(reversedPies);");
+console.log(reversedPies);
 
 
 
@@ -179,14 +188,14 @@ console.log(pies);
 
 // splitting string into and array
 
-// const names = "Bob,Sally,Mary";
-// const namesArr = names.split(" ");
-// console.log(namesArr);
+const names = "Bob,Sally,Mary";
+const namesArr = names.split("");
+console.log(namesArr);
 
 
-// const namesString = namesArr.join("");
-//
-// console.log(namesString);
+const namesString = namesArr.join("");
+
+console.log(namesString);
 
 
 // splitting on an empty string
@@ -195,9 +204,26 @@ console.log(pies);
 
 // joining array into a string
 
-// const bondsArray = ["Connery", "Lazenby", "Moore", "Dalton", "Brosnan", "Craig"];
-// const bondsString = bondsArray.join("");
-// console.log(bondsString);
+const bondsArray = ["Connery", "Lazenby", "Moore", "Dalton", "Brosnan", "Craig"];
+const bondsString = bondsArray.join("");
+console.log(bondsString);
+
+/*
+DOES it Mutate?
+
+Mutate values:
+    push
+    pop
+    shift
+    unshift
+    reverse
+
+Do not Mutate values:
+    split
+    join
+    splice
+ */
+
 
 
 //
@@ -223,6 +249,68 @@ console.log(pies);
     7. Log everyone in the row in a single string separated by underscores
  */
 
+let classmates = ['Songju', 'Shah', 'John', 'Joe'];
+classmates.sort();
+classmates.reverse();
+console.log(classmates);
+const firstTwo = classmates.slice(2,4);
+console.log(firstTwo);
+console.log( classmates.join(""));
+console.log( classmates.join(", "));
+
+
+
+
+// ** Create a function that will take in a formatted string of numbers
+// and return an array of phone numbers without any symbols.
+// Console.log the output of the returned array.
+const phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
+let arraysNum, joinedNum;
+
+function phoneNumTogether(number){
+    arraysNum = number.split("-");
+    console.log(arraysNum)
+    // arraysNum.split("-");
+    joinedNum = arraysNum.join("");
+    return joinedNum;
+}
+
+console.log( phoneNumTogether(phoneNumbers));
+/* EXAMPLE...
+
+    const phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
+
+    cleanPhoneNumbers(phoneNumbers);
+
+    the above code should output the following...
+
+       2105552020
+       2305552020
+       5125553030
+
+*/
+
+// const phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
+
+
+
+/*
+DOES it Mutate?
+
+Mutate values:
+    push
+    pop
+    shift
+    unshift
+    slice
+    reverse
+    sort
+
+Do not Mutate values:
+    split
+    join
+    splice
+ */
 
 
 
