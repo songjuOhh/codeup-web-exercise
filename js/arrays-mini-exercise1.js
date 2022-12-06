@@ -172,7 +172,8 @@ function allIndexesOf(array, value){
 
             element = array[i];
             console.log(element);
-            newArray.push(array.indexOf(element));
+            // newArray.push(array.indexOf(element));// instead of using indexOf function,
+            newArray.push(i);  // above will not work because you assigned it double times
 
             console.log(newArray);
         }
@@ -180,7 +181,22 @@ function allIndexesOf(array, value){
     console.log(newArray)
     return newArray;
 }
-console.log(allIndexesOf(fruits, "apple"));   //not returning the second index element
+console.log(allIndexesOf(fruits, "apple"));   //not returning the second index element [solved]
+
+
+console.log("More Array Bonus Exercise #1");
+fruits = ["apple", "banana", "orange", "apple", "pineapple"];
+function allIndexesOf2(array, value){
+    let newArray = []
+    array.forEach((item, index) => {
+        if(item === value){
+            newArray.push(index)
+        }
+    })
+    console.log(newArray)
+}
+allIndexesOf2(fruits, "apple");
+console.log("---------------");
 
 //Exercise #2
 console.log("More Array Bonus Exercise #2");
@@ -190,7 +206,7 @@ function removeAll (array, bugName) {
         return element !== bugName;
     });
 }
-console.log( removeAll(bugs, "mosquito"));
+console.log( removeAll(bugs, "ant"));
 
 //Function exercises -->
 console.log("Function exercises -->");
@@ -259,12 +275,12 @@ console.log("#2");
 function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
     let rollArray =[];
     for (let i =0; i<numberOfRolls; i++){
-        // rollArray.push(diceFunction);  // it repeats the first-generated number
-        rollArray.push(twelveSidedDie()); // If I call function directly, it works fine
+        rollArray.push(diceFunction());  // it repeats the first-generated number
+        // rollArray.push(twelveSidedDie()); // If I call function directly, it works fine [solved]
     }
     return rollArray;
 }
-console.log( listOfRollsFromDieFunc( 3, twelveSidedDie()));
+console.log( listOfRollsFromDieFunc( 3, twelveSidedDie));
 
 
 //================================= LOOPS AND ARRAY BONUSES
