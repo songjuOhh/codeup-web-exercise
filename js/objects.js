@@ -242,7 +242,7 @@
         }
         console.log(`I found ${bookCount} book(s).`)};
 
-    books.showBookInfo('i');
+    books.showBookInfo('a');
 })();
 
 
