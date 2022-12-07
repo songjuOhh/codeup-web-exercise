@@ -429,7 +429,6 @@ const pet1 = {
     ageInYears: 4,
     species: 'Dog'
 };
-
 console.log(Object.keys(pet1));
 
 
@@ -466,19 +465,21 @@ console.log(Object.keys(pet1));
 //     }
 // }
 //
-// const dog3 = {
-//     petName: 'Dino',
-//     age: 10,
-//     bark: function() {
-//         console.log("Woof woof!");
-//     },
-//     eat: function(food) {
-//         console.log('Dog is eating...' + food);
-//     },
-//     agePet: function() {
-//         this.age += 1;
-//     }
-// }
+const dog3 = {
+    petName: 'Dino',
+    age: 10,
+    bark: function() {
+        console.log("Woof woof!");
+    },
+    eat: function(food) {
+        console.log('Dog is eating...' + food);
+    },
+    agePet: function() {
+        this.age += 1;
+    }
+}
+
+dog3.agePet();
 //
 // const dogs = [dog1, dog2, dog3];
 //
@@ -552,15 +553,15 @@ console.log(Object.keys(pet1));
 
 // ========== The this Keyword
 
-// const pet6 = {
-//     name: "Sparky",
-//     age: 3,
-//     getOlder: function() {
-//         console.log(this.age);
-//         this.age += 1;
-//     }
-// };
-//
-// console.log(pet6.age);
-// pet6.getOlder();
-// console.log(pet6.age);
+const pet6 = {
+    name: "Sparky",
+    age: 3,
+    getOlder: function() {
+        console.log(this.age);
+        this.age += 1;
+    }
+};
+
+console.log(pet6.age);
+pet6.getOlder();
+console.log(pet6.age);

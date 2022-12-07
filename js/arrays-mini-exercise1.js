@@ -165,13 +165,14 @@ console.log("#1");
 console.log("More Array Bonus Exercise #1");
 var fruits = ["apple", "banana", "orange", "apple", "pineapple"];
 function allIndexesOf(array, value){
-    let newArray = [], element;
+    let newArray = [];
     for(let i=0; i<array.length; i++) {
         if (array[i] === value) {
             console.log(array[i]);
 
-            element = array[i];
-            console.log(element);
+            // element = array[i];
+            // console.log(element);
+
             // newArray.push(array.indexOf(element));// instead of using indexOf function,
             newArray.push(i);  // above will not work because you assigned it double times
 
@@ -184,18 +185,22 @@ function allIndexesOf(array, value){
 console.log(allIndexesOf(fruits, "apple"));   //not returning the second index element [solved]
 
 
-console.log("More Array Bonus Exercise #1");
-fruits = ["apple", "banana", "orange", "apple", "pineapple"];
-function allIndexesOf2(array, value){
-    let newArray = []
-    array.forEach((item, index) => {
-        if(item === value){
-            newArray.push(index)
-        }
-    })
-    console.log(newArray)
-}
-allIndexesOf2(fruits, "apple");
+// console.log("More Array Bonus Exercise #1");
+// fruits = ["apple", "banana", "orange", "apple", "pineapple"];
+// function allIndexesOf2(array, value){
+//     let newArray = []
+//     array.forEach((item, index) => {
+//         if(item === value){
+//             newArray.push(index)
+//         }
+//     })
+//     console.log(newArray)
+// }
+// allIndexesOf2(fruits, "apple");
+
+
+
+
 console.log("---------------");
 
 //Exercise #2
