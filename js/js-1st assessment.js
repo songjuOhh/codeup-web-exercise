@@ -2,7 +2,6 @@
  *
  *
  */
-function increment(){
 
 
 
@@ -40,14 +39,14 @@ function add(input1, input2){
     return false;
 }
 
-function multiply(input1, input2){
-    if(isNumeric(input1) && isNumeric(input2)){
-        return parseFloat(input1) * parseFloat(input2);
-        // }else{
-        //     return false;
-    }
-    return false;
-}
+// function multiply(input1, input2){
+//     if(isNumeric(input1) && isNumeric(input2)){
+//         return parseFloat(input1) * parseFloat(input2);
+//         // }else{
+//         //     return false;
+//     }
+//     return false;
+// }
 
 function multiply(input1){
     if(isNumeric(input1)){
@@ -84,15 +83,15 @@ function isPalindrome(input){
             // let reversedInput = input.split('').reverse().join('');
             // return input.toLowerCase() === reversedInput.toLowerCase();
         }
-    }
+
 }
 
-function isPalindrome(input){
-    let array = [];
-    if(typeof(input)!=='string'){
-        return false;
-    }else{
-        let reversedInput = input.split('').reverse().join('');
-        return input.toLowerCase() === reversedInput.toLowerCase();
-    }
-}
+// function isPalindrome(input){
+//     let array = [];
+//     if(typeof(input)!=='string'){
+//         return false;
+//     }else{
+//         let reversedInput = input.split('').reverse().join('');
+//         return input.toLowerCase() === reversedInput.toLowerCase();
+//     }
+// }

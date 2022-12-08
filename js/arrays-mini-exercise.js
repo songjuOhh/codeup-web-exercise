@@ -285,7 +285,7 @@ function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
     }
     return rollArray;
 }
-console.log( listOfRollsFromDieFunc( 3, twelveSidedDie));
+console.log( listOfRollsFromDieFunc( 6, twelveSidedDie));
 
 
 //================================= LOOPS AND ARRAY BONUSES
@@ -295,17 +295,50 @@ let days = "Monday-Tuesday-Wednesday-Thursday-Friday-Saturday-Sunday";
 let daysArray = days.split("-");
 console.log(daysArray);
 function randomDay (){
-    return Math.floor(Math.random())
+    let randomNum = Math.floor(Math.random()*daysArray.length-1)+1;
+    let ranDay = daysArray[randomNum];
+    return ranDay;
 }
 
-
+console.log( randomDay());
 
 // 2. Create a function that takes a single letter and returns what number the letter is in the alphabet. Ignore case.
 //
 //   someFunction("a") // returns 1
 //   someFunction("z") // returns 26
-//
+
+function countChar (input){
+    return  input.toString().length;
+}
+console.log(countChar("HelloHowAreYou"));
+
+
 // 3. Create a function that returns the longest string in a given array of string elements.
+const stringGrp = ['Oh','Yeah','Hellooooooo','Hey'];
+const stringGrp2 = ['Ohdfsf','Yedsfsah','Helloosdfsfooooo','eefwgdtbdbgdHey'];
+
+function findLongest (array){
+    let longString=['y'], result;
+    for (let i=0; i<array.length; i++){
+        if(array[i].length > longString.length){
+            longString = stringGrp[i];
+            result = longString;
+        }else{
+            result= longString;
+        }
+    }
+    return result;
+}
+console.log( findLongest(stringGrp));
+console.log( findLongest(stringGrp2));
+
+// stringGrp.forEach(function (group, index){
+//     console.log(group[index][index]);
+//
+// });
+
+
+
 //
 // 4. Create a function that takes in two arrays of elements, including numbers. If all numbers added together in the first array are equal to all the number inputs added in the second array, return true, otherwise, false. Only add together numeric elements but either array may contain non-numeric elements.
 //

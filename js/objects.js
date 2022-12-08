@@ -11,7 +11,7 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-
+    console.log("======== Exercsie 1 ========\n ");
     const person = {
         firstName : "Rick",
         lastName : "Sanchez"
@@ -28,11 +28,16 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+    console.log("\n======== Exercsie 2 ========\n ");
     person.sayHello= function (){
         return `Hello from ${person.firstName} ${person.lastName}!`
     }
     console.log(person.sayHello());
+
+    person.middleName = 'Junior';
+    console.log(person);
+
+    // let arr = ['Songju', 'Oh', 4,3, {firstName: 'Andrew', lastName: 'OHHH'}];
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -48,12 +53,36 @@
      * and console.log the relevant messages for each person
      */
 
+    console.log("\n======== Exercsie 3 ========\n ");
+
     const shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
+    console.log("-----forEach------");
 
+    //Turning input to dollar rate amount with $sign and format (ex) $100.00
+    function toDollar (number){
+        let newNum = parseFloat(number);
+        newNum = newNum.toLocaleString('en-US',{style: 'currency', currency: 'USD'});
+        return newNum;
+    }
+
+    shoppers.forEach(function(shopper){
+        if(shopper.amount > 200){
+            let savings = shopper.amount *.12
+            let total = parseFloat( shopper.amount )- savings; //do not have to use parseFloat, but it does not hurt for making sure
+            console.log(`${shopper.name} has a bill of ${toDollar( shopper.amount)}, and received a 12% discount.\n${shopper.name}'s discounted total is ${toDollar( total)}, with a savings of ${toDollar( savings)}.`);
+
+        }else{
+            let remaining = (200 - parseFloat(shopper.amount)).toLocaleString('en-US',{style: 'currency', currency: 'USD'});
+            console.log(`${shopper.name} has a bill of $${toDollar( shopper.amount)}, and did not receive any discount.\n${shopper.name}'s total is ${toDollar( shopper.amount)}.`);
+        }
+    });
+
+
+    console.log("-----for loop------");
     shoppers.discount = function(){
 
         let newPrice;
@@ -63,7 +92,7 @@
                 newPrice = this[i].amount - (this[i].amount * .12);
                 console.log(`Hello, ${this[i].name}!`)
                 console.log(`You spent more then $200! So you will get %12 discount!`);
-                console.log(`Your discount amount is ${this[i].amount*.12}`)
+                console.log(`Your discount amount is $${this[i].amount*.12}`)
                 console.log(`Your total amount will be:`)
                 console.log(newPrice);
                 console.log("");
@@ -77,10 +106,7 @@
             }
         }
     };
-
     shoppers.discount();
-
-
 
 
 
@@ -96,6 +122,13 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    let multiArr = [["orange","banana","tomato"],["Yeah"],["Woof"]];
+    console.log(multiArr[0][2]);  //
+    // [0]: indicates 1st grp of array /
+    // [2]: indicates 2nd index of array[0]
+    // It will return 'tomato'
+
+    console.log("\n======== Exercsie 4 ========\n ");
 
     const books = [{
         title: "The Salmon of Doubt",
@@ -157,10 +190,11 @@
      *      ---
      *      ...
      */
+    console.log("\n======== Exercsie 5 ========\n ");
 
+    console.log("------ for loop -------");
     books.showAll = function(){
         for(let i=1; i<books.length; i++){
-            console.log("");
             console.log(`Book #${i}`);
             console.log(`Title: ${this[i].title}`);
             console.log(`Author: ${this[i].author.firstName} ${this[i].author.lastName}`);
@@ -168,6 +202,23 @@
         }
     }
     books.showAll();
+
+    console.log("------ forEach -------");
+    let oneConsoleLogToRuleThemAll = '';  // if you assign it inside forEach, it will reset the assignment through the loop
+
+    books.forEach(function(book, index){
+        /*** function(book, ) = this is connected to books array-object, so will use assigned variable: book, instead of books
+         *** function( ,index) = this will work as 'i' in for loop, and the value will start from 0
+         */
+        let bookNumber = index + 1;
+        let fullName = `${book.author.firstName} ${book.author.lastName}`
+        let message = `Book # ${bookNumber}\nTitle: ${book.title}\nName: ${fullName}\n---\n`
+        console.log(message);
+
+        console.log(`#Putting into one console log \n`); //for fun
+        oneConsoleLogToRuleThemAll+= message;
+        console.log(oneConsoleLogToRuleThemAll);
+    })
 
     /**
      * Bonus:
@@ -179,6 +230,10 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
+    console.log("\n======== Exercsie 6 ========\n ");
+
     function sepName (name){            // Turns(split) input into Array
         let fullName = [], result;      // so I can separate first and last name.
         fullName += name;
@@ -186,7 +241,13 @@
         console.log(result);
         return result;
     }
+
+    console.log(sepName("Sognju OHHH").join(""));
+
+
+
     // console.log(sepName("Songju Oh"));   // testing if sepName works
+
 
      books.createBook =function (title, authorName) {
          authorName = sepName(authorName);   // turn input:authorName into 2 array element
@@ -210,6 +271,54 @@
 
     console.log(books[1].author);
 
+    const books2 = [];
+
+    books2.createBook2 =function (title, author){
+        let splitName = author.split(' ');
+        let bookObject =
+            {
+            title: title,
+            author: {
+                firstName: splitName[0],
+                lastName: splitName[1]
+            }
+        };
+        books2.push( bookObject);
+    }
+    books2.createBook2("Man's not hot", "Big ShaQ");
+    books2.createBook2("Girl is hot", "Big ShaQQQQQ");
+
+    console.log(books2);
+
+
+    // //created an independent function
+    // function createBook2 (title, author){
+    //     let splitName = author.split(' ');
+    //     let bookObject ={
+    //         title: title,
+    //         author: {
+    //             firstName: splitName[0],
+    //             lastName: splitName[1]
+    //         }
+    //     };
+    //     return bookObject;
+    // }
+    // createBook2("Man's not hot", "Big ShaQ");
+
+    ////console.log(books2);
+    //     function showBookInfo(book, index) {
+    //         let bookNumber = index + 1;
+    //         let fullName = `${book.author.firstName} ${book.author.lastName}`;
+    //         let message = `Book # ${bookNumber}\nTitle: ${book.title}\nAuthor: ${fullName}\n---\n`;
+    //         console.log(message);
+    //     }
+    //     books2.forEach(function(book, index){
+    //        showBookInfo(book, index);
+    //     });
+
+
+
+
     function returnSpace (input){
         let string = input.toString(), symbol = '';
         for(let i=0; i<string.length+7; i++){
@@ -217,15 +326,19 @@
         }
         return symbol;
     }
+
+
+
     // returnSpace("songju");
 
     books.showBookInfo= function (book){
 
-        let bookCount=0, title, space;
+        let bookCount=0, title, space, lowered;
         for (let i=0; i<books.length; i++){
-            if(this[i].title.includes( book) ||
-                this[i].author.firstName.includes(book) ||
-                this[i].author.lastName.includes(book)){
+            lowered = book.toLowerCase();
+            if(this[i].title.toLowerCase().includes( lowered) ||
+                this[i].author.firstName.toLowerCase().includes(lowered) ||
+                this[i].author.lastName.toLowerCase().includes(lowered)){
                 title = this[i].title;
                 // console.log(this[i].title);
                 space = returnSpace(title);   //adding space
@@ -242,7 +355,9 @@
         }
         console.log(`I found ${bookCount} book(s).`)};
 
-    books.showBookInfo('');
+    books.createBook("Charlotte's Web","E.B. White");
+    books.showBookInfo('white');
+
 })();
 
 
