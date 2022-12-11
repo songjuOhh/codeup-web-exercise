@@ -290,10 +290,12 @@ console.log( listOfRollsFromDieFunc( 6, twelveSidedDie));
 
 //================================= LOOPS AND ARRAY BONUSES
 //
+console.log("\n====== Exercise 1 ====== \n");
+
 // 1. Create a function that returns a random day of the week
 let days = "Monday-Tuesday-Wednesday-Thursday-Friday-Saturday-Sunday";
 let daysArray = days.split("-");
-console.log(daysArray);
+// console.log(daysArray);
 function randomDay (){
     let randomNum = Math.floor(Math.random()*daysArray.length-1)+1;
     let ranDay = daysArray[randomNum];
@@ -301,6 +303,9 @@ function randomDay (){
 }
 
 console.log( randomDay());
+
+
+console.log("\n====== Exercise 2 ====== \n");
 
 // 2. Create a function that takes a single letter and returns what number the letter is in the alphabet. Ignore case.
 //
@@ -313,9 +318,9 @@ function countChar (input){
 console.log(countChar("HelloHowAreYou"));
 
 
+console.log("\n====== Exercise 3 ====== \n");
 // 3. Create a function that returns the longest string in a given array of string elements.
 const stringGrp = ['Oh','Yeah','Hellooooooo','Hey'];
-const stringGrp2 = ['Ohdfsf','Yedsfsah','Helloosdfsfooooo','eefwgdtbdbgdHey'];
 
 function findLongest (array){
     let longString=['y'], result;
@@ -330,7 +335,7 @@ function findLongest (array){
     return result;
 }
 console.log( findLongest(stringGrp));
-console.log( findLongest(stringGrp2));
+// console.log( findLongest(stringGrp2));
 
 // stringGrp.forEach(function (group, index){
 //     console.log(group[index][index]);
@@ -338,31 +343,181 @@ console.log( findLongest(stringGrp2));
 // });
 
 
-
-//
+console.log("\n====== Exercise 4 ====== \n");
 // 4. Create a function that takes in two arrays of elements, including numbers. If all numbers added together in the first array are equal to all the number inputs added in the second array, return true, otherwise, false. Only add together numeric elements but either array may contain non-numeric elements.
-//
-//   var arr1 = ['bob', 1, true, 1, 2];
-//   var arr2 = [2, null, undefined, 0, 2, "apple"]
+
+// function isNumeric(input) {
+//     return !isNaN(parseFloat(input));
+// }
+
+let arr1 = ['bob', 1, true, 1, 2];
+let arr2 = [2, null, undefined, 0, 2, "apple"]
 //   exampleFunction(arr1, arr2) // returns true
-//
+function sameSum(array1, array2){
+      let arraySum1 =0, arraySum2=0, total1=0, total2=0;
+      arr1.forEach(function(number, i,array){
+          // console.log(array[i]);
+          if(typeof ( array[i]) === 'number'){
+              arraySum1 += parseFloat(array[i]);
+              total1 = arraySum1;
+          }else{
+              arraySum1 +=0;
+              total1 = arraySum1;
+          }
+      });
+        // console.log(total1);
+      arr2.forEach(function(number, i,array){
+          // console.log(array[i]);
+          if(typeof (array[i])=== 'number'){
+              arraySum2 += parseFloat(array[i]);
+              total2 = arraySum2;
+          }else{
+              arraySum2 +=0;
+              total2 = arraySum2;
+          }
+      });
+        // console.log(total2);
+      if(total1 === total2){
+          return true;
+      }else{
+          return false;
+      }
+}
+console.log(sameSum(arr1, arr2));
+
+
+console.log("\n====== Exercise 5 ====== \n");
+
 // 5. Write a program to toggle the case for all characters in a string. Special characters will not change.
-//   Example input: "aBc12#""
+//   Example input: "aBc12#"
 //   Example output: "AbC12#"
-//
-// 6. Write a program that takes a given string appended with a number at the end. The program will check the length of the string to verify the string is equal to the number appended. If the number appended equals the string length, output "Yes". if the number appended does not equal the string length, output "No".
+
+function changeString(input){
+    let strArray = input.split(''), letter='';
+
+    strArray.forEach(function(item, i, array){
+        if(typeof array[i] === 'string' && Number(array[i]) !== true){
+            const changed = array[i].toUpperCase() === array[i] ? array[i].toLowerCase() : array[i].toUpperCase();
+            letter += changed;
+        }else{
+            letter +=array[i];
+        }
+    });
+    return letter;
+}
+console.log(changeString('#Songju*'));
+
+
+console.log("\n====== Exercise 6 ====== \n");
+
+// 6. Write a program that takes a given string appended with a number at the end.
+// The program will check the length of the string to verify the string is equal to the number appended.
+// If the number appended equals the string length, output "Yes".
+// if the number appended does not equal the string length, output "No".
 //
 // Example Input: "geek5"
 // Example Output: "Yes"
 //
 // Example Input: "codingchallenge25"
 // Example Output: "No"
-//
-// 7. Create a student roster management app. Using the user dialogue functions (alert, confirm, prompt), create an application that will prompt the user to choose from a menu with the following actions:
+
+function stringMatch(input){
+    let stringArray = input.split(''), numString='',num,strings='';
+    console.log(stringArray);
+    stringArray.forEach(function(item, i,array){
+        // console.log(item);
+        // console.log(array[i]);
+       if(!isNaN( parseFloat (array[i])) === true){
+           numString += array[i];
+           console.log(numString);
+       }else{
+           strings += array[i];
+           console.log(strings);
+       }
+       // const result =
+    });
+    // numString = numString.join('');
+    num = parseFloat(numString);
+    const match = num === input.length ? true : false;
+    return match;
+    // return numString;
+}
+console.log(stringMatch("geekfff8"));
+
+
+
+console.log("\n====== Exercise 7 ====== \n");
+// 7.  Create a student roster management app. Using the user dialogue functions (alert, confirm, prompt),
+//     create an application that will prompt the user to choose from a menu with the following actions:
 //     1) add a student
 //     2) delete a student
 //     3) view all students in alphabetical order
 //     4) view all students in reverse alphabetical
+const list =[];
+
+function openApp(){
+    // while(true){
+        let askUser = prompt(`Hi, what do you want to do? \n ( add / delete / show / sort / reverse / quit )?`);
+        if (askUser === 'add'){
+            list.add = function (){
+                let answer = prompt("Please enter a name of student. (First name & Lastname)");
+                answer = answer.split(' ');
+
+                let sNames = ({fullName :{ firstName: answer[0], lastName:answer[1]}});
+                list.push(sNames);
+            }
+        }else if(askUser ==='delete'){
+            list.delete = function (){
+                let answer = prompt(`Which name do you want to delete?`);
+                this.filter (function( element, i ,array){
+                    return element !== answer;
+                });
+            }
+        }else if(askUser ==='show'){
+            list.forEach(function(){
+                console.log(`First Name: ${this.fullName.firstName}\n Last Name: ${this.fullName.lastName}`);
+                alert(`First Name: ${this.fullName.firstName}  Last Name: ${this.fullName.lastName}`);
+            });
+        }else if(askUser === 'sort'){
+            list.sort= function(){
+                return this.sort();
+            };
+            alert(`The list has been sorted.`)
+            list.forEach(function(){
+                console.log(`First Name: ${this.fullName.firstName}\n Last Name: ${this.fullName.lastName}`);
+                alert(`First Name: ${this.fullName.firstName}  Last Name: ${this.fullName.lastName}`);
+            });
+        }else if(askUser === 'reverse'){
+            list.reverse= function(){
+                return this.sort();
+            };
+            alert(`The list has been sorted.`)
+            list.forEach(function(){
+                console.log(`First Name: ${this.fullName.firstName}\n Last Name: ${this.fullName.lastName}`);
+                alert(`First Name: ${this.fullName.firstName}  Last Name: ${this.fullName.lastName}`);
+            });
+        }else{
+            let userQuit = confirm("Do you want to quit?");
+            if (userQuit === true){
+                alert("Have a good day!")
+
+            }else{
+                openApp();
+
+            }
+        }
+    // }
+}
+openApp();
+
+
+
+
+
+
+
+
+
 
 
 
