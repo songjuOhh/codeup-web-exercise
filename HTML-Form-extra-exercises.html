@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main>
+  <form action="https://request-inspector.glitch.me/" method="POST">
+
+    <span style="font-weight: 400; font-size: 18px; margin-left: auto">Your Name<span style="color: red; margin-right:auto">*</span></span><br>
+    <input id="first_name"
+           name="First Name"
+           type="text"
+           placeholder=""
+           style="width: 200px;
+           margin-right:auto">
+    <input id="last_name"
+           name="Last Name"
+           type="text"
+           placeholder=""
+           style="width: 200px;
+           margin-right:auto"><br>
+
+    <label for="first_name"
+           style="color: gray">First Name</label>
+
+    <label for="last_name"
+           style="color: gray">Last Name</label></br><br>
+
+    <label for="Business_name" style="font-weight: 400; font-size: 18px" >Business Name<span style="color: red" fon >*</span></label><br>
+    <input id="Business_name" name="Business Name" type="text" placeholder="" style="width: 200px"><br><br>
+
+    <label for="E_mail" style="font-weight: 400; font-size: 18px" >E mail<span style="color: red" fon >*</span></label><br>
+    <input id="E_mail" name="E mail" type="text" placeholder="ex. myname@example.com" style="width: 200px"><br><br>
+
+    <label for="Phone_Number" style="font-weight: 400; font-size: 18px" >Phone Number<span style="color: red" fon >*</span></label><br>
+    <input id="Phone_Number" name="Phone Number" type="text" placeholder="(000) 000-0000" style="width: 200px"><br><br>
+
+
+    <label for="City_location" style="font-weight: 400; font-size: 18px" >City where you are located<span style="color: red" fon >*</span></label><br>
+    <input id="City_location" name="City Location" type="text" placeholder="" style="width: 200px"><br><br>
+
+    <label for="List_Product" style="font-weight: 400; font-size: 18px" >List the product(s) you will be selling<span style="color: red" fon >*</span></label><br>
+    <input id="List_Product" name="List Product" type="text" placeholder="Type here..." style="width: 400px; height: 150px; "><br><br>
+
+    <label for="Special_Request" style="font-weight: 400; font-size: 18px" >Special Requests<span style="color: red" fon >*</span></label><br>
+    <input id="Special_Request" name="Special Request" type="text" placeholder="" style="width: 200px"><br><br>
+
+    <span style="font-weight: 600;">Consent to Photograph /Videotape / Interview Individuals</span><br>
+    <br><span style="font-weight: bold; font-style: italic; color: cornflowerblue">Please read, date and provide your signature on the next pages</span><br>
+    <br><span style="font-weight: 600;">Terms & Conditions</span><br>
+    <p>I hereby agree and give my permission for Rise Asset Development and/or partners to record, film,photograph, audiotape or videotape myself (hereinafter collectively referred to as “Works”) and to display, publish or distribute these Works for the purpose of publishing, posting on the Rise Asset Development website and posting on social media sites. I hereby waive any right to approve the use of these Works now or in the future, whether the use is known to me or unknown, and I waive any right to any royalties related to the use of these Works. I understand that the Works may appear in electronic form on the internet or in other publications outside of the Rise Asset Development’s control. I agree that I will not hold the Rise Asset Development responsible for any harm that may arise from such unauthorized reproduction.</p>
+
+    <input type="date" id="start" name="date_signed" value="2022-12-12"><br>
+
+    <canvas height="100" width="300" class="signature-pad"></canvas><br>
+    <span style="font-weight: 600;">I am over 18 year-of-age and I have read this waiver and am familiar with its content<span style="color: red" fon >*</span></span><br>
+    <div style="width:300px; height:300px;">
+      <br><canvas id="canvas" style="border:1px solid black"></canvas>
+    </div>
+
+    <button>Submit</button>
+  </form>
+</main>
+
+</body>
+</html>
