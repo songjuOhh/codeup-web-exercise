@@ -455,60 +455,139 @@ console.log("\n====== Exercise 7 ====== \n");
 //     4) view all students in reverse alphabetical
 const list =[];
 
-function openApp(){
-    // while(true){
-        let askUser = prompt(`Hi, what do you want to do? \n ( add / delete / show / sort / reverse / quit )?`);
-        if (askUser === 'add'){
-            list.add = function (){
-                let answer = prompt("Please enter a name of student. (First name & Lastname)");
-                answer = answer.split(' ');
+list.add = function (){
+    let answer = prompt("Please enter a name of student. (First name & Lastname)");
+    answer = answer.split(' ');
 
-                let sNames = ({fullName :{ firstName: answer[0], lastName:answer[1]}});
-                list.push(sNames);
-            }
-        }else if(askUser ==='delete'){
-            list.delete = function (){
-                let answer = prompt(`Which name do you want to delete?`);
-                this.filter (function( element, i ,array){
-                    return element !== answer;
-                });
-            }
-        }else if(askUser ==='show'){
-            list.forEach(function(){
-                console.log(`First Name: ${this.fullName.firstName}\n Last Name: ${this.fullName.lastName}`);
-                alert(`First Name: ${this.fullName.firstName}  Last Name: ${this.fullName.lastName}`);
+    let sNames = ({fullName :{ firstName: answer[0], lastName:answer[1]}});
+    list.push(sNames);
+}
+list.delete = function (){
+
+    let answer = prompt(`Which name do you want to delete? (first Name)`), output;
+    // this.filter (function( element, i ,array){
+    //     output = element !== answer;
+    //     console.log(output)
+    //     return output
+    // });
+
+    list.filter(x => x.firstName !== answer);
+    output = list;
+    console.log(output);
+
+
+    return output;
+}
+list.listAll = function(){
+    console.log("==========");
+    for (let i =0; i<list.length; i++) {
+        console.log(`First Name: ${this[i].fullName.firstName}\n Last Name: ${this[i].fullName.lastName}`);
+        // alert(`First Name: ${this[i].fullName.firstName}\n Last Name: ${this[i].fullName.lastName}`);
+    }
+}
+list.sort= function(){  // Turned array objects into an array & sorted
+    // this.sort(function(a, b) {
+    //     let nameA = a.firstName.toUpperCase(),
+    //         nameB = b.firstName.toUpperCase();
+    //     if(nameA < nameB) {
+    //         return -1;
+    //     }
+    //     if(nameA > nameB) {
+    //         return 1;
+    //     }
+    //     return 0;  // If names are the same
+    // });
+    function askHowSort(){
+        let nameArray = [], output;
+        let firstOrLast = prompt("How do you want to sort name? \n 1. by first name \n 2. bt last name ");
+        if(firstOrLast === '1'){
+            list.forEach(function(item, i, array){
+                nameArray.push(`${array[i].fullName.firstName} ${array[i].fullName.lastName}`) ;
+                console.log(nameArray);
             });
-        }else if(askUser === 'sort'){
-            list.sort= function(){
-                return this.sort();
-            };
-            alert(`The list has been sorted.`)
-            list.forEach(function(){
-                console.log(`First Name: ${this.fullName.firstName}\n Last Name: ${this.fullName.lastName}`);
-                alert(`First Name: ${this.fullName.firstName}  Last Name: ${this.fullName.lastName}`);
-            });
-        }else if(askUser === 'reverse'){
-            list.reverse= function(){
-                return this.sort();
-            };
-            alert(`The list has been sorted.`)
-            list.forEach(function(){
-                console.log(`First Name: ${this.fullName.firstName}\n Last Name: ${this.fullName.lastName}`);
-                alert(`First Name: ${this.fullName.firstName}  Last Name: ${this.fullName.lastName}`);
+        }else if( firstOrLast === '2'){
+            list.forEach(function(item, i, array){
+                nameArray.push(`${array[i].fullName.lastName} ${array[i].fullName.firstName}`) ;
+                console.log(nameArray);
             });
         }else{
+            askHowSort();
+        }
+        output = nameArray.sort();
+        console.log(output);
+        return output;
+    }
+    askHowSort();
+    // this.forEach(function(item, i, array){
+    //     nameArray += array[i].fullName.firstName;
+    //
+    //     console.log(nameArray);
+    // });
+    // nameArray.sort();
+};
+
+
+list.reverse= function(){
+    let reversed ;
+    reversed = list.reverse();
+    return reversed;
+}
+
+//const name = [{fullName : {firstName : 'Songju', lastName : 'Oh'}},{fullName: {firstName : 'Aaid', lastName : 'Shah'}}];
+
+function openApp(){
+    let i = 0;
+    while(i<1){
+        let askUser = prompt(`Hi, what do you want to do? \n 1. add \n 2. delete \n 3. show \n 4. sort \n 5. reverse \n 6. quit `);
+        if (askUser === '1'){
+            list.add();
+            list.listAll();
+            openApp();
+            break;
+
+        }else if(askUser ==='2'){
+            list.delete();
+            list.listAll();
+            openApp();
+            break;
+
+        }else if(askUser ==='3'){
+            list.listAll();
+            openApp();
+            break;
+
+        }else if(askUser === '4'){
+            list.sort();
+            list.listAll();
+            openApp();
+            break;
+
+        }else if(askUser === '5'){
+            list.reverse();
+            list.listAll();
+            openApp();
+            break;
+
+        }else if(askUser === false || askUser === '6'){
             let userQuit = confirm("Do you want to quit?");
             if (userQuit === true){
-                alert("Have a good day!")
-
-            }else{
+                alert("Have a good day!");
+                break;
+            }else if(userQuit !== true){
                 openApp();
-
+            }else{
+                break;
             }
+
+        }else{
+             openApp();
         }
-    // }
+    } i++;
 }
+
 openApp();
+
+console.log(list);
 
 
 
