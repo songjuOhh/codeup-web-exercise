@@ -1,0 +1,45 @@
+.fancy-header {
+    color: cadetblue; /* single line comment */
+    text-decoration: underline;
+}
+
+.closing{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+.vision-images img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+/*.image{*/
+/*    width: 400px;*/
+/*    height: 250px;*/
+/*    object-fit: cover;*/
+
+/*}*/
+
+#vision-images>image:nth-child(0){
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+
+}
+
+.fancy-pics img:hover{
+    cursor: default;
+    transform: scale(1.5);
+    transition: all .3s ease-in-out;
+}
+
+.contents{
+    /*text-align: center;*/
+}
+

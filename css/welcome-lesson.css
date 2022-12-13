@@ -1,0 +1,18 @@
+body{
+    font-family: "Arial", sans-serif;
+}
+
+.section-header {
+    color: cadetblue;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.header-container:nth-child(2){
+    color: red;
+}
+
+
+h1.header-container{
+    color: red;
+}
