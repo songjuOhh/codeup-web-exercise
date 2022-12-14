@@ -1,6 +1,8 @@
 .fancy-header {
     color: cadetblue; /* single line comment */
     text-decoration: underline;
+    text-align: center;
+
 }
 
 .closing{
@@ -8,8 +10,13 @@
     font-size: 20px;
 }
 
+
+
 body{
     font-family: Arial, sans-serif;
+    background-image: url("../images/19742.jpg");
+    background-size: 20%;
+    alignment: center;
 }
 
 .vision-images img {
@@ -17,6 +24,11 @@ body{
     height: 250px;
     object-fit: cover;
     border-radius: 50px;
+}
+
+.top-table{
+    color: white;
+    background-color: black;
 }
 
 /*.image{*/
@@ -40,6 +52,20 @@ body{
 }
 
 .contents{
+    list-style-image: url("../images/icons8-corgi-16.png");
+
     /*text-align: center;*/
 }
+
+
+
+table{
+    border-collapse: collapse;
+}
+
+th,td{
+    border: 1px solid black;
+    padding: 8px;
+}
+
 

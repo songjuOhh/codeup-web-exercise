@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="./css/style.css" >
+    <link rel="stylesheet" href="./css/style.css" media="all" >
 </head>
 <body>
 <div>
@@ -59,26 +59,29 @@
     </div>
     <hr>
 
-    <div class ="Price">
-        <h2>Our Product</h2>
-        <table>
+    <div>
+        <h2 class="caption">Our Product</h2>
+        <table class ="price-table">
+            <thead class = "top-table">
+                <tr>
+                    <th>Plan</th>
+                    <th>Price</th>
+                    <th>Features</th>
+                </tr>
+            </thead>
+
             <tr>
-                <th>Plan</th>
-                <th>Price</th>
-                <th>Features</th>
-            </tr>
-            <tr>
-                <td>Starter</td>
+                <th>Starter</th>
                 <td>$99</td>
                 <td>Base Technology</td>
             </tr>
             <tr>
-                <td>Advanced</td>
+                <th>Advanced</th>
                 <td>$199</td>
                 <td>Additional Features</td>
             </tr>
             <tr>
-                <td>Premium</td>
+                <th>Premium</th>
                 <td>$499</td>
                 <td>Unlimited Support</td>
             </tr>

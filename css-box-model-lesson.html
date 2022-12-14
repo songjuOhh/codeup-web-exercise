@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Lecture</title>
+  <!--
+      - box model
+      - width / height
+      - padding
+      - border
+      - setting multiple values
+      - border
+      - Chrome Inspector
+      - div vs. span (block vs. inline elements)
+      - box-sizing
+  -->
+  <style>
+
+    body {
+      background: black;
+      margin: 10px;
+      padding: 10px;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      background: purple;
+      margin: 0;
+    }
+
+    .box {
+      color: white;
+      height: 200px;
+      width: 200px;
+      padding: 50px 1px 30px 5px;
+      /* top to bottom  */
+      /* y-axis x-axis  */
+      border: 5px solid red;
+      margin: 10px;
+      /* does not affect the box size itself */
+      /* relationship between the boxes   */
+    }
+
+    .box1 {
+      background: blue;
+      margin-bottom: 10px;
+      /* margin will return the highest margin value  */
+      /* if box1 & box2 both have margin 10px, it will be margin 10px  */
+    }
+
+    .box2 {
+      background: green;
+      margin-top: 10px;
+
+      box-sizing: border-box;
+      /* work with the 'subtracted' size of the space (margin, padding) */
+      /* work within the content box */
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="box box1">
+  <h1>Box 1</h1>
+</div>
+
+<div class="box box2">
+  <h1>Box 2</h1>
+</div>
+
+<!--  /* Difference between div & span  */-->
+<div style="width: 50%; background: darkblue; margin: 10px; padding: 10px">
+  <div>div1</div>
+  <div>div2</div>
+</div>
+<!--  /* div is block level  */-->
+<!--  /* takes up the full size*/-->
+<p style="width: 50%; background: darkslategrey; margin: 20px; padding: 10px">
+<!--  <p> will not show any color since it meant to be 'paragraph'-->
+  <span>span1</span>
+  <span>span2</span>
+</p>
+<span>span1</span>
+<span>span2</span>
+<!--  /* space is inline  */-->
+<!--  /* could be within a block  */-->
+
+
+
+
+</body>
+</html>

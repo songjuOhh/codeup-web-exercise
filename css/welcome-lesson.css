@@ -16,3 +16,30 @@ body{
 h1.header-container{
     color: red;
 }
+
+
+.ask:hover{
+    color: pink;
+}
+
+.ask:active{
+    color:purple;
+}
+
+.ask:visited{
+    color: brown;
+}
+
+.btn{
+    transition: all ease 1s;
+}
+
+.btn:hover{
+    background-color: green;
+    color: white;
+}
+
+.btn:active{
+    background-color: red;
+    color: white;
+}
