@@ -6,6 +6,15 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 
+.message{
+    background: lightblue;
+    padding: .5em;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    width: 80%;
+    margin: .5em auto;
+}
+
 fieldset{
     margin: auto;
     padding: 2em;
