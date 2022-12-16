@@ -9,6 +9,20 @@
     box-sizing: border-box;
 }
 
+header {
+    background-image: url("https://picsum.photos/1200/300");
+    background-size: cover;
+    min-height: 300px;
+    padding-top: 275px;
+}
+
+.page-wrapper {
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    background: #E6ECF0;
+}
+
 .container{
     display: flex;
     flex-direction:column;
@@ -17,8 +31,13 @@
 
 .row{
     display: flex;
+    flex-direction: row;
     width:100%;
-    /*max-width: 1200px;*/
+    max-width: 1200px;
+}
+
+.row.full-width {
+    max-width:100%;
 }
 
 .column{
@@ -27,47 +46,64 @@
     flex: 1 0;
 }
 
+.column.col-shrink {
+    flex: 0 1;
+}
+
+.column.profile-items{
+    list-style-type: none;
+    padding:0;
+
+}
+
 body, html {
-    background-color: var(--main-bg);
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
-header {
+.container.header-container {
+    width:100%;
+    height: 100%;
+    padding-bottom: 300px;
     background-image: url("https://picsum.photos/1200/300");
+    background-repeat: no-repeat;
     background-size: cover;
-    min-height: 300px;
-    padding-top: 275px;
+    background-position: center;
+
+
 }
+/*header {*/
+/*    background-image: url("https://picsum.photos/1200/300");*/
+/*    background-size: cover;*/
+/*    min-height: 300px;*/
+/*    padding-top: 275px;*/
+/*}*/
 a {
     color: var(--link-color);
 }
-.top-nav {
-    background: var(--light-bg);
+.row.top-nav {
+    /*background: var(--light-bg);*/
     width: 100%;
+    z-index: 1000;
+
+
 }
 .nav {
     display: flex;
-    flex-direction: row;
     list-style-type: none;
-    padding: 0;
+    padding: 12px;
     margin: 0;
-    position: fixed;
     background: white;
     width: 100%;
+    column-gap: 20px;
 
-
+    position: sticky;
+    top:0;
 }
 
 
-.nav-item{
-    padding: 1.5em;
-    width: 100%;
-
-
-}
 
 .nav-link {
 
@@ -87,10 +123,9 @@ a {
     background: var(--light-bg);
 }
 
-
 .profile-header{
-    position: absolute;
-    top: 240px;
+    line-height: 100px;
+    position: fixed; top:330px;
 }
 
 .timeline{
@@ -109,7 +144,8 @@ a {
 }
 
 .profile-details{
-    padding: 15px 10px 0 10px;
+    width: 270px;
+    padding: 15px 0 0 10px;
     clear: left;
     display:block;
 }
@@ -125,12 +161,14 @@ a {
 .btn-large {
     font-size: 1.3em;
     padding: 10px;
+    margin-right: 10px;
 }
 
 .media{
     background: white;
     width: 100%;
-    border-bottom: .5em #E6ECEF;
+    border-bottom: 1px solid #E6ECEF;
+    padding-left: 10px;
 }
 
 .media-image{
@@ -140,11 +178,16 @@ a {
 }
 
 .media-body{
-    padding: 10px 10px 10px 5px;
+padding-bottom: 10px;
 }
 
 .who-to-follow{
-    padding: 20px 10px 5px 5px;
+    width: 250px;
+    padding: 20px 0 5px 5px;
+}
+
+.media.row{
+    /*border-bottom: .5em solid #E6ECEF;*/
 }
 
 
