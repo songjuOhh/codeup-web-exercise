@@ -19,8 +19,10 @@ header {
 .page-wrapper {
     display:flex;
     flex-direction:column;
+    width: 1200px;
     min-height:100vh;
     background: #E6ECF0;
+    margin: 0 auto;
 }
 
 .container{
@@ -183,7 +185,7 @@ padding-bottom: 10px;
 
 .who-to-follow{
     width: 250px;
-    padding: 20px 0 5px 5px;
+    padding: 20px 10px 5px 5px;
 }
 
 .media.row{
