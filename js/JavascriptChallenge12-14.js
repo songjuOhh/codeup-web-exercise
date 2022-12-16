@@ -174,3 +174,31 @@ console.dir(returnPetsWithNoFish2(pets2))
 //             age: 3
 //         }
 //     ]
+
+// Create a function, returnLongestPetName, that takes in a array of pet objects and returns a string of the longest name for a pet.
+
+function findLongest(array){
+    let longest = '';
+    for(let i=0; i<array.length; i++){
+        if(array[i].name.length > longest.length){
+            longest = array[i].name;
+        }else{
+
+        }
+    }
+    return longest;
+}
+console.log(findLongest(pets2));
+
+
+function returnLongestPetName(array){
+    let longest ='';
+    array.forEach(function ( item){
+        if(item.name.length> longest.length){
+            longest = item.name;
+        }
+    });
+    return longest;
+}
+console.log(returnLongestPetName(pets2));
+// returnLongestPetName(pets) // returns 'Mr. Salmon'
