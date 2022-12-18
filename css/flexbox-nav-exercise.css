@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    font-family: Bangla Sangam MN sans-serif ;
+    font-weight: bold;
+}
+
+.top-bar{
+    background: #848487;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+li:hover{
+    color: blue;
+}
+i:hover{
+    color: blue;
+}
+
+
+
+.tab{
+    padding: .5em;
+}
+
+.tab:nth-of-type(6){
+    margin-left: auto;
+}
+.tab:nth-of-type(5){
+    margin: 0 auto;
+}
+
+.tab:nth-child(5){
+    font-size: 3em;
+    padding: .2em;
+}
+
+.tab:nth-child(7){
+    /*im*/
+}
+
+/*.tab:nth-of-type(2){*/
+/*    margin-right: auto;*/
+/*}*/
