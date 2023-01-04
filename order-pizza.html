@@ -5,9 +5,7 @@
   <title>Pizza w/ Bootstrap</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
   <link rel="stylesheet" href="./css/custom.css">
-
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,17 +22,16 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Menu</a>
         </li>
-
       </ul>
       <form class="d-flex justify-content-start overflow-x-auto">
         <input class="form1 form-control me-2" type="search" placeholder="Zip Code" aria-label="Search">
         <button class="btn1 btn-outline-success text-primary border border-primary text-nowrap"  data-bs-toggle="button" type="submit">Search stores near you!</button>
       </form>
+<!--sign-up button starts-->
       <ul class="navbar-nav position-sticky start-100 po">
         <li class="nav-item align-self-center">
           <i class="bi bi-person-fill"></i>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="#">Sign Up!</a>
         </li>
@@ -43,13 +40,14 @@
   </div>
 </nav>
 
+<!--container starts-->
 <div class="container mb-5">
-
+<!--jumbotron starts-->
   <div class="jumbotron mb-5">
     <div class="position-relative top-50 start-50 translate-middle text-center fs-2 text-bg-light p-3  opacity-75">Welcome to Pizza World!</div>
   </div>
 
-
+<!--main body starts -->
   <h2>Build your own Pizza!</h2>
 
   <div class="nav-container">
@@ -74,6 +72,7 @@
       </li>
     </ul>
 
+<!--Size and Crust starts here-->
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active bg-secondary bg-opacity-25" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
 
@@ -81,7 +80,6 @@
           <div class="card-header bg-primary text-white">
             Choose Size and Crust
           </div>
-
           <div class=" card m-2">
             <div class="card-header">
               Hand Tossed
@@ -134,7 +132,10 @@
         </div>
         <button type="button" class="btn btn-primary mt-2 position-sticky top-50 start-100 align-self-center mb-2">Next ></button>
       </div>
+<!--Size and Crust ends here-->
 
+
+<!--Cheese and Sauce starts here-->
       <div class="tab-pane fade bg-secondary bg-opacity-25" id="nav-cheese" role="tabpanel" aria-labelledby="nav-cheese-tab">
         <div class=" card" >
           <div class="card-header bg-primary text-white">
@@ -190,9 +191,10 @@
         <button type="button" class="btn btn-primary mt-2 position-sticky top-0 start-0 mb-2">< Previous</button>
         <button type="button" class="btn btn-primary mt-2 position-sticky top-0 start-100 mb-2 ">Next ></button>
       </div>
+<!--Cheese and Sauce ends here-->
 
 
-
+<!--Topping starts here-->
       <div class="tab-pane fade bg-secondary bg-opacity-25" id="nav-topping" role="tabpanel" aria-labelledby="nav-topping-tab">
         <div class=" card" >
           <div class="card-header bg-primary text-white">
@@ -280,8 +282,8 @@
           </div>
         </div>
         <button type="button" class="btn btn-primary mt-2 position-sticky top-0 start-100 mb-2 ">Checkout <i class="bi bi-cart-fill"></i></button>
-
       </div>
+<!--Topping ends here-->
     </div>
   </div>
 
