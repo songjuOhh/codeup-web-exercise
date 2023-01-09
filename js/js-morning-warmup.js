@@ -108,7 +108,35 @@ function filterList2(array){
 console.log(filterList2([1,2,'a','b']));
 
 
+function zipArrays(array1, array2){
+    let newArray=[];
+    for(let i=0; i<array1.length; i++){
+        newArray.push(array1[i]);
+        newArray.push(array2[i]);
+    }
+    return newArray;
+}
 
+console.log(zipArrays([1,2,'a','b'], ['bob', null, 'sally', 25]));
+
+// Create a function, zipArrays, that takes two array inputs of the same length and returns an array with the elements of both arrays alternating in the order of first[0], second[0], first[1], second[1], etc. If both arrays are empty, return an empty array.
+//
+//
+// zipArrays([], []) // returns []
+// zipArrays([1], [2]) // returns [1, 2]
+// zipArrays(['a', 'b'], ['c', 'd']) // returns... ['a', 'c', 'b', 'd']
+// zipArrays([1,2,'a','b'], ['bob', null, 'sally', 25]) // returns...
+//
+//     [
+//     1,
+//         'bob',
+//         2,
+//         null,
+//         'a',
+//         'sally',
+//         'b',
+//         25
+//     ]
 
 
 
