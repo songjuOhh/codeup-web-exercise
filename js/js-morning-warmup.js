@@ -138,6 +138,105 @@ console.log(zipArrays([1,2,'a','b'], ['bob', null, 'sally', 25]));
 //         25
 //     ]
 
+const users = [
+    {
+        firstName: 'Justin',
+        lastName: 'Reich',
+        dob: '1923-01-01',
+        username: 'jreich',
+        password: '$2y$10$UJlsa5vWq5DUKJjyO38gM.dCZfudWOFCrLWQosh0mhXKaZmRmvDse'
+    },
+    {
+        firstName: 'Sally',
+        lastName: 'Smith',
+        dob: '1935-03-11',
+        username: 'ssmith',
+        password: '$2y$10$VaLGU5.7uQLr.eg6kSI9seOcP4JY4XktWt28I9JgblAGIDpkDXbya'
+    },
+    {
+        firstName: 'Fred',
+        lastName: 'Smith',
+        dob: '1999-01-21',
+        username: 'fsmith',
+        password: '$2y$10$3USt6Dl8TNMkeh0KioPnfeVpynAotXvSIJ5xrzAHragPEAWMYEBNS'
+    },]
+
+function getUserCredentials (array){
+    const userAccount = [{}];
+    for(let i =0; i<array.length; i++){
+        userAccount.push(
+            `{ username:  ${array[i].username} \n password:  ${array[i].password}}`);
+    }
+    return userAccount;
+}
+console.log(getUserCredentials( users));
+
+
+
+
+function getUserCredentials2(users) {
+    const credentials = [];
+    for (let i = 0; i < users.length; i++) {
+        const user = users[i];
+        credentials.push({ username: user.username, password: user.password });
+    }
+    return credentials;
+}
+console.log(getUserCredentials2( users));
+
+
+
+
+
+//
+// Write a function, getUserCredentials, that takes in a list of user objects and returns a list of user objects with only the username and password properties. Assume at least an array of one user object.
+
+
+    // const users = [
+    // {
+    //     firstName: 'Justin',
+    //     lastName: 'Reich',
+    //     dob: '1923-01-01',
+    //     username: 'jreich',
+    //     password: '$2y$10$UJlsa5vWq5DUKJjyO38gM.dCZfudWOFCrLWQosh0mhXKaZmRmvDse'
+    // },
+    // {
+    //     firstName: 'Sally',
+    //     lastName: 'Smith',
+    //     dob: '1935-03-11',
+    //     username: 'ssmith',
+    //     password: '$2y$10$VaLGU5.7uQLr.eg6kSI9seOcP4JY4XktWt28I9JgblAGIDpkDXbya'
+    // },
+    // {
+    //     firstName: 'Fred',
+    //     lastName: 'Smith',
+    //     dob: '1999-01-21',
+    //     username: 'fsmith',
+    //     password: '$2y$10$3USt6Dl8TNMkeh0KioPnfeVpynAotXvSIJ5xrzAHragPEAWMYEBNS'
+    // }]
+//
+// getUserCredentials(users) // returns...
+
+/*
+
+[
+  {
+    username: 'jreich',
+    password: '$2y$10$UJlsa5vWq5DUKJjyO38gM.dCZfudWOFCrLWQosh0mhXKaZmRmvDse'
+  },
+  {
+    username: 'ssmith',
+    password: '$2y$10$VaLGU5.7uQLr.eg6kSI9seOcP4JY4XktWt28I9JgblAGIDpkDXbya'
+  },
+  {
+    username: 'fsmith',
+    password: '$2y$10$3USt6Dl8TNMkeh0KioPnfeVpynAotXvSIJ5xrzAHragPEAWMYEBNS'
+  }
+]
+
+*/
+
+
 
 
 
