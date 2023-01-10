@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+  <h1>
+    Welcome to my page!
+  </h1>
+  <p> Here is some content on my page.</p>
+<ul>
+  <li>
+
+  </li>
+</ul>
+<script>
+    // getting all h1's on the page with getElementsByTagName('<htmltag>')
+    // ===================================================================
+    // const h1Elements = document.getElementsByTagName("h1"); // returns a collecion of HTML elements
+    // for (const element of h1Elements) {
+    //   console.log(element.textContent);
+    // }
+
+    // Get h1 with a specific ID
+    // ==========================
+    // const h1IdElement = document.getElementById("author");
+    // console.log(h1IdElement.textContent);
+
+    // Get h1 with class name
+    // ========================
+    // const h1ClassElements = document.getElementsByClassName("title"); // returns a collection of HTML elements
+    // for (const elements of h1ClassElements) {
+    //   console.log(elements.textContent);
+    // }
+
+    // One way to add content to the DOM
+    // =================================
+    // const divElement = document.getElementById("content");
+    // divElement.innerHTML += "<p>Content</p>";
+
+    // Another way to add elements to the DOM
+    // =======================================
+    // const divElement = document.getElementById("content");
+    // const newElem = document.createElement("p"); // creates a HTML element
+    // newElem.textContent = "This is new content"; // <p>this is new content</p>
+    // divElement.appendChild(newElem);
+
+    // Getting values of a form using querySelector('CSS SELECTOR')
+    // ============================================================
+    // const formUsernameElement = document.querySelector("input#username"); // ONLY returns the first instance of the specified css selector
+    // console.log(formUsernameElement.value);
+
+    // Getting values with querySelectorAll('CSS SELECTOR')
+    // ====================================================
+    // const allFormElements = document.querySelectorAll(".input-feild"); // returns a collection of html elements
+    // for (const element of allFormElements) {
+    //   console.log(element.value);
+    // }
+
+    // Adding/Removing attributes HTML elements
+    //=======================================================
+    // const searchLink = document.getElementById("search-link");
+    // const imageElement = document.getElementById("my_image"); // returns a collection
+    // console.log(searchLink.hasAttribute("href")); // returns bool
+    // console.log(searchLink.hasAttribute("class")); // returns bool
+    // console.log(imageElement.hasAttribute("alt"));
+
+    // Adding Attribute
+    // ===================
+    // searchLink.setAttribute("class", "search-button"); // class="search-button"
+    // imageElement.setAttribute("alt", "This is a place holder image");
+    // console.log(searchLink.hasAttribute("class")); // returns true after adding class
+    // console.log(searchLink); // displays the html element with class added
+    // console.log(imageElement.hasAttribute("alt"));
+    // console.log(imageElement);
+
+    // Removing Attribute
+    // ===================
+    // searchLink.removeAttribute("class");
+    // console.log(searchLink); // displays the element without the class name
+
+    // data-* attribute
+    // =================
+    // const listItems = document.getElementsByTagName("li");
+    // for (const item of listItems) {
+    //   console.log(item.getAttribute("data-dbid"));
+    // }
+
+</script>
+</body>
+</html>
