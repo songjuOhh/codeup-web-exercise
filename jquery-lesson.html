@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            background: #efefef;
+            font-family: 'Roboto', sans-serif;
+        }
+        #sample {
+            width: 400px;
+            height: 306px;
+            background-color: black;
+            position: absolute;
+            left: 80px;
+            top:10px;
+            color: white;
+            text-align: center;
+            line-height: 306px;
+            font-size: 24px;
+        }
+
+        .box {
+            width:60px;
+            height:60px;
+            position:relative;
+            margin-bottom:2px;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .green {
+            background-color:green;
+        }
+        .red {
+            background-color:red;
+        }
+        .blue {
+            background-color:navy;
+        }
+        .orange {
+            background-color:orange;
+        }
+        .purple {
+            background-color:purple;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="parent-div">
+    <h1 id="elementId"></h1>
+    <h1 id="ChangeWithVS">Change my text with Vanilla Javascript</h1>
+    <h1 id="ChangeWithJQ">Change my text with JQuery</h1>
+    <h1 id="changeBg">Change my backgorund color with Vanilla Js</h1>
+    <h1 id="changeBgJQ">Change my backgorund color with JQuery</h1>
+</div>
+<button id="btn" type="button">Click me to see an event</button>
+
+<div>
+    <div class="box red" data-bgcolor = "red" id="box1">1</div>
+    <div class="box green" data-bgcolor = "green" id="box2">2</div>
+    <div class="box blue" data-bgcolor = "navy" id="box3">3</div>
+    <div class="box orange" data-bgcolor = "orange" id="box4">4</div>
+    <div class="box purple" data-bgcolor = "purple" id="box5">5</div>
+    <div id="sample">Sample</div>
+
+</div>
+<script src="./js/jquery-3.6.3.js"></script>
+<!--Your Javascript file goes here-->
+<script src="./js/my-custom-javascript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src=“https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+</body>
+</html>

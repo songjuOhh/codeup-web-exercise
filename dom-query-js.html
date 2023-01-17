@@ -22,6 +22,15 @@
     }
 
 
+    @keyframes horizontal-shaking {
+        0% { transform: translateX(0) }
+        25% { transform: translateX(5px) }
+        50% { transform: translateX(-5px) }
+        75% { transform: translateX(5px) }
+        100% { transform: translateX(0) }
+    }
+
+
 </style>
 </head>
 <body>
@@ -160,16 +169,31 @@
                video.src = "/images/explosion.mp4";
                video.autoplay = true;
                document.querySelector('.page-wrapper').appendChild(video);
+                document.querySelector('body').style.backgroundColor = 'black'
+
             });
 
 
             let nuke = function (event){
                 document.getElementById('whole').remove();
                 let video = document.createElement('video');
-                video.src = "/images/nuke.mp4";
+                video.src = "/images/nuclear.mp4";
                 video.autoplay = true;
                 document.querySelector('.page-wrapper').appendChild(video);
                 document.querySelector('body').style.backgroundColor = 'black'
+                const shakeX = [
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(5px)' },
+                    { transform: 'translateX(-5px)' },
+                    { transform: 'translateX(5px)' },
+                    { transform: 'translateX(0)' },
+                ];
+                const shakeTiming = {
+                    duration: 100,
+                    iterations: 10,
+                }
+                const shaky = document.querySelector(".page-wrapper");
+                shaky.animate(shakeX, shakeTiming);
             };
             document.getElementById('nuke').addEventListener('click',nuke);
 

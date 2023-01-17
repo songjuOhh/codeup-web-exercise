@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="addbutton">Get JSON</button>
+<div id="output"></div>
+
+
+
+<!------------------------------------>
+
+<!--<button id="addbutton">Add Storage</button>-->
+<!--<button id="seebutton">See Storage</button>-->
+
+<!--<input type="text" id="coffeeName">-->
+<!--<input type="text" id="coffeeRoast">-->
+
+<!------------------------------------>
+
+
+<script>
+    const addButton = document.getElementById('addbutton');
+    addButton.addEventListener('click', addJSON);
+
+    const output = document.querySelector('#output');
+
+    function addJSON(){
+        console.log('clicked');
+        output.innerHTML = "WORKING";
+        const url = "//api.jsonserve.com/1hovNx";
+        fetch(url).then(function(response){
+            console.log(response.status);
+        })
+    }
+
+
+    //---------------------------------------------------------
+
+    // document.getElementById('addbutton').addEventListener('click',addToStorage);
+    // document.getElementById('seebutton').addEventListener('click',viewStorage);
+    // const coffeesJ = JSON.parse(localStorage.getItem('tester'));
+    // console.log(coffeesJ);
+    //
+    // function addToStorage(){
+    //     let tempName = document.getElementById('coffeeName').value;
+    //     let tempRoast = document.getElementById('coffeeRoast').value;
+    //     let myObj = JSON.stringify( {"name":tempName, "roast":tempRoast});
+    //     console.log(myObj);
+    //
+    //     localStorage.setItem('tester', myObj);
+    //     console.log('clicked'+myObj);
+    // }
+    //
+    // function viewStorage(){
+    //     let tempHolder = JSON.parse(localStorage.getItem('tester'));
+    //     console.log(tempHolder);
+    // }
+    //
+    var coffees = [
+        {id: 1, name: 'Light City', roast: 'light'},
+        {id: 2, name: 'Half City', roast: 'light'},
+        {id: 3, name: 'Cinnamon', roast: 'light'},
+        {id: 4, name: 'City', roast: 'medium'},
+        {id: 5, name: 'American', roast: 'medium'},
+        {id: 6, name: 'Breakfast', roast: 'medium'},
+        {id: 7, name: 'High', roast: 'dark'},
+        {id: 8, name: 'Continental', roast: 'dark'},
+        {id: 9, name: 'New Orleans', roast: 'dark'},
+        {id: 10, name: 'European', roast: 'dark'},
+        {id: 11, name: 'Espresso', roast: 'dark'},
+        {id: 12, name: 'Viennese', roast: 'dark'},
+        {id: 13, name: 'Italian', roast: 'dark'},
+        {id: 14, name: 'French', roast: 'dark'},
+    ];
+
+    console.log(JSON.stringify(coffees));
+    //
+    // let toJson = JSON.stringify(coffees);
+    // console.log(toJson);
+    //
+    // let toJson2 = JSON.stringify(coffees, ['id','name','roast']);
+    // console.log(toJson2)
+    //
+    // let toObj = JSON.parse(toJson);
+    // console.log(toObj);
+
+    //---------------------------------------------------------
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

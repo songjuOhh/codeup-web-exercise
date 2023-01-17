@@ -184,8 +184,48 @@ function getUserCredentials2(users) {
 }
 console.log(getUserCredentials2( users));
 
+let array =['a',' b', 'c', 'D', 'E']
+function shiftElementsOver (array){
+    let newArray = [] ;
+    for(let i=0; i<array.length; i++){
+        newArray.push(array[i]);
+    }
+    newArray[0].toUpperCase();
+    newArray.join('');
+    return newArray;
+}
+
+array.forEach(function (array){
+    let newArray = [] ;
+    newArray.push(array);
 
 
+})
+
+console.log(shiftElementsOver(['a',' b', 'c', 'D', 'E']));
+
+
+function shiftElementsOver2 (array){
+    let newArray2 = [] , last;
+
+}
+
+console.log(shiftElementsOver2(['bob', 'sally', 'mary']));
+
+/** You can use array functions such as:
+ someArray.push()    = adds new last element
+ someArray.pop()     = removes last element
+ someArray.unshift() = adds new first element
+ someArray.shift()   = removes first element
+ *** for objects inside array ***
+ */
+
+// Create a function, shiftElementsOver, that takes in an array and returns the array with all elements moved one index further into the array. The final element should be moved to the front. Assume the input array will have three or more elements.
+//
+//
+// shiftElementsOver([1, 2, 3, 4, 5]) // returns [5, 1, 2, 3, 4]
+// shiftElementsOver(['bob', 'sally', 'mary']) // returns ['mary', 'bob', 'sally']
+// shiftElementsOver([null, 123, 'hello world', true]) // returns [true, null, 123, 'hello world']
 
 
 //
@@ -237,7 +277,16 @@ console.log(getUserCredentials2( users));
 */
 
 
+// This loop should print the numbers from 0 through 9 in the console
 
+// for (let i = 0; i < 10; i++) {
+//     console.log("The value of i is " + i);
+//
+// }
+
+// desired output : 0, 1 ,2,  3, 4, 5, 6, 7, 8, 9
+let i =[1,2,3,4,5]
+console.log( i.length);
 
 
 

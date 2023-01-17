@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .red{
+      color: white;
+      background-color: red;
+    }
+
+    .blue{background-color: blue;}
+
+    #login{
+      color: white;
+      background-color: black;
+      border: 1.5px solid orange;
+      padding: 5px;
+    }
+
+    .testBtn{
+      color: white;
+      background-color: blue;
+      border: 1.5px solid orange;
+      padding: 5px;
+    }
+
+    .scale{
+      font-size: 18px;
+    }
+
+  </style>
+</head>
+<body>
+<div id="parent-div">
+  <h1 id="changeWithJQ">Hello, Welcome to</h1>
+  <h1 class="codeup" id="changeWithJQ2">JQuery!</h1>
+</div>
+<div class="codeup" id="listGrp" data-bgcolor="red">
+  <ul>
+    <li class="list" id="list1">Hello.</li>
+    <li class="list" id="list2">This</li>
+    <li class="list" id="list3">is</li>
+    <li class="list" id="list4">a list</li>
+    <li class="list" id="list5"><P>Paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate error et facere itaque neque numquam odio optio recusandae sint! Amet doloribus eos exercitationem fuga incidunt nostrum, pariatur perspiciatis temporibus.</P></li>
+  </ul>
+</div>
+<div class="codeup"  data-bgcolor="blue">
+  <ul>
+    <li class="list" id="list6">Hello.</li>
+    <li class="list" id="list7">This</li>
+    <li class="list" id="list8">is</li>
+    <li class="list" id="list9">a list</li>
+    <li class="list" id="list10"><P>Paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate error et facere itaque neque numquam odio optio recusandae sint! Amet doloribus eos exercitationem fuga incidunt nostrum, pariatur perspiciatis temporibus.</P></li>
+  </ul>
+</div>
+
+<P class="codeup" id="paragraph">Paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate error et facere itaque neque numquam odio optio recusandae sint! Amet doloribus eos exercitationem fuga incidunt nostrum, pariatur perspiciatis temporibus.</P>
+
+
+<script src="./js/jquery-3.6.3.js"></script>
+<script>
+  // $("#changeWithJQ")
+  //         .css("text-align", "center")
+  //         .css("color", "green");
+  // $("#changeWithJQ2")
+  //         .css("text-align", "center")
+  //         .css("color", "Blue");
+  //
+  // $("#listGrp")
+  //         // .css("color", "Blue")
+  //         .css("width", "90%");
+  //
+  // $(".list").css("list-style", "none");
+  // $("#list1")
+  //         .css("text-align", "center")
+  //         .css("font-weight", "bold")
+  //         .css("background-color", "yellow");
+  // $("#list5")
+  //         .css("color", "red")
+  //         .css("font-style", "italic");
+  //
+  // $("#paragraph")
+  //         .css("font-size", "20px")
+  //         .css("font-style", "italic")
+  //         .css("font-variant", "small-caps");
+  //
+  // $("<p>") // creates a paragraph tag
+  //         .text("Hello World! I am from jquery!")
+  //         .css("text-align", "center")
+  //         .appendTo("#parent-div");
+
+
+  // $(document).ready(function(){
+  //   let $listItems = $('.codeup');
+  //   $listItems.css({
+  //     border: '1px solid red'
+  //   })
+  // });
+  // $('.codeup').css('border', '1px solid #F00');
+  //
+  //
+  // $('.codeup').eq(1).css('border', 'none');
+
+
+  // $(document).ready(function (){
+  //   $('li').on('click',function(){
+  //     let $parentUL = $(this).parent('ul');
+  //     let $listItems = $($parentUL).find('li');
+  //     $listItems.toggleClass('red-border blue-border');
+  //   })
+  // })
+
+  // $('li').on('click',function(){
+  //   let $parentUL = $(this).data('bgcolor');
+  //   TweenMax.to("#sample",0.5,{background:newColor})
+  // })
+
+  // $(document).ready(function (){
+  //   $('li').on('click',function(){
+  //     let $parentUL = $(this).parent('ul');
+  //     let color = $parentUL.attr('data-color');
+  //     let $listItems = $parentUL.find('li');
+  //     $listItems.toggleClass('red-border blue-border');
+  //   })
+  // })
+
+
+  /*
+        Element selectors exercise
+   */
+
+  // $('p').css("font-size", "20px");
+  // $('h1,p,li').css({
+  //   backgroundColor: "yellow",
+  //   // background : "-webkit-linear-gradient(red, #333, orange)",
+  //   // webkitBackgroundClip: "text",
+  //   // webkitTextFillColor:"transparent"
+  // });
+  //         // .css("background" ,"-webkit-linear-gradient(red, #333, orange)")
+  //         // .css("-webkit-background-clip", "text")
+  //         // .css("-webkit-text-fill-color","transparent");
+  //
+  // // alert( $('h1').html());
+  // let showH1  = $('h1').text();
+  // alert(showH1);
+  //
+  // // $('li').toggle();
+
+$(document).ready(function (){
+  $('h1')
+  .click(function (){
+    $(this).toggleClass('red');
+  });
+
+  $('p').dblclick(function (){
+    // $(this).css('font-size', '18px');
+    $(this).toggleClass('scale');
+  })
+
+  $('li')
+  .on('mouseover', function () {
+    $(this).css('color', 'red')
+  })
+  .on('mouseout', function (){
+    $(this).css('color', 'black');
+  });
+
+})
+
+
+</script>
+
+</body>
+</html>
