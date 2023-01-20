@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attributes</title>
+  <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    body{
+      padding: .5em;
+    }
+    .invisible{
+      visibility: hidden;
+    }
+    dd{
+      margin: 1em 1em 3em 1em;
+    }
+    dt{
+      margin-top: 2em;
+    }
+
+    .highlight{
+      background-color: yellow;
+    }
+
+    .textBold{
+      font-weight: bold;
+    }
+    .textBlue{
+      color: blue;
+    }
+    .QnA{
+      margin-bottom: 5em;
+    }
+    .images-groups{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 3em;
+      margin-bottom: 1em;
+    }
+    .image{
+      width: 95%;
+      height: 95%;
+      border: 1px solid orange;
+    }
+    .buttons-grp{
+      display: flex;
+      justify-content: space-around;
+    }
+
+
+
+  </style>
+</head>
+<body>
+<main class="container">
+  <div class="row">
+
+    <h1 class="text-center mb-5">Top Ten Questions about Glacier National Park</h1>
+    <!--    <button id="answerBtn">show answer</button>-->
+    <dl class="QnA">
+      <dt>Q: Where is Glacier National Park located? </dt>
+      <dd class="question invisible">A:
+        Glacier National Park is located in northwestern Montana on the U.S./Canadian border. Access to the park from the east and west is along U.S. Highway 2. Park headquarters is located in West Glacier.
+      </dd>
+      <dt>Q: When is the park open? </dt>
+      <dd class="question invisible">A:
+        Glacier National Park is open year-round, 24 hours a day. In the fall winter and spring, some roads are inaccessible by car due to snow.
+      </dd>
+      <dt>Q: What does it cost to enter the park? </dt>
+      <dd class="question invisible">A:
+        Glacier National Park is open year-round, 24 hours a day. In the fall winter and spring, some roads are inaccessible by car due to snow.
+      </dd>
+      <dt>Q: Where are the closest airports to the park? Is there transportation from the airports to the park? </dt>
+      <dd class="question invisible">A:
+        Glacier Park International Airport in Kalispell, Montana is 25 miles west of park headquarters in West Glacier, Montana.
+      </dd>
+      <dt>Q: What is the closest train station to the park? </dt>
+      <dd class="question invisible">A:
+        Amtrak rail lines parallel the southern and southwestern borders of the park. Amtrak stops at West Glacier (Belton), East Glacier (summer only), and Essex (upon request).
+      </dd>
+      <dt>Q: What transportation is available within the park? </dt>
+      <dd class="question invisible">A:
+        In addition to private automobiles, guided tours are available in the main sections of the park. Contact Glacier Park, Inc. and Sun Tours for information (see addresses and telephone numbers below). Rental cars are available in neighboring communities.
+      </dd>
+      <dt>Q: Where are the visitor centers located in the park? </dt>
+      <dd class="question invisible">A:
+        Visitor centers are located in Apgar, Logan Pass, and St. Mary. Each of these visitor centers, as well as the Many Glacier and Two Medicine Ranger Stations, have park rangers on duty throughout the summer months to answer questions and provide information. During the winter months, Apgar Visitor Center is open on week-ends.
+      </dd>
+      <dt>Q: Do you have campgrounds in the park? Can I make a reservation? </dt>
+      <dd class="question invisible">A:
+        Glacier National Park has 13 campgrounds, which provide just over 1000 campsites. Most of the campgrounds are operated on a "first come, first serve" basis. Fish Creek and St. Mary Campgrounds will be available for reservation by calling 1-800-365-2267. Click here for more detailed information on camping.
+      </dd>
+      <dt>Q: Is it possible to reserve a backcountry campsite? </dt>
+      <dd class="question invisible">A:
+        Reservations for backcountry campsites may be made in advance, beginning April 1 for the upcoming summer. For further information on backcountry camping and for making reservations, visit our website section on Backcountry Camping.
+      </dd>
+      <dt>Q: Can I drive my RV along the Going-to-the-Sun Road? </dt>
+      <dd class="question invisible">A:
+        Vehicles, and vehicle combinations, longer than 21 feet (including bumpers) or wider than 8 feet (including mirrors) are prohibited between Avalanche Campground and the Sun Point parking area. You may however, drive to Avalanche if traveling east, and to Sun Point, if traveling west. Vehicles over 10 feet in height may have difficulty driving west from Logan Pass due to rock overhangs. Stock trucks and trailers may access Packers Roost and Siyeh Bend.
+      </dd>
+
+    </dl>
+    <hr class="mb-5">
+    <div class="funFacts">
+      <h3>Glacier National Park</h3>
+      <ul class="national-parks-facts" id="glacial-national-parks-facts">
+        <li>Mountain goats are a symbol of the park.</li>
+        <li>Glacier National Park is a part of the world’s first international peace park.</li>
+        <li>Going-to-the-Sun Road is a spectacular marvel and a must-see on your trip to Glacier.</li>
+        <li>Evidence of human use in the area dates back over 12,000 years.</li>
+      </ul>
+      <h3>Yosemite National Park </h3>
+      <ul class="national-parks-facts" id="yosemite-national-parks-facts">
+        <li>Yosemite is home to one of the tallest waterfalls in the world.</li>
+        <li>Yosemite’s granite rock formations glow like fire at sunset.</li>
+        <li>The park’s diverse landscape supports more than 400 species.</li>
+        <li>Yosemite Is Famous for Its Giant Sequoia Trees.</li>
+      </ul>
+      <h3>Grand Canyon National Park</h3>
+      <ul class="national-parks-facts" id="grand-canyon-national-parks-facts">
+        <li>The Grand Canyon is bigger than the state of Rhode Island.</li>
+        <li>The Grand Canyon itself can influence the weather. </li>
+        <li>The Grand Canyon is one of the most visited national parks in the United States. </li>
+        <li>The Grand Canyon was carved over some 6 million years.</li>
+      </ul>
+      <button id="lightLast">highLight-last</button>
+
+      <div class="bottom-groups">
+        <div class="images-groups">
+        <div class="imageGrp" id="imageGrp1">
+          <img class="image" id="glacialImage" src="images/glacial.jpeg">
+<!--          <button id="button1">button1</button>-->
+        </div>
+
+        <div class="imageGrp"id="imageGrp2">
+          <img class="image" id="yosemiteImage" src="images/yosemite.jpeg">
+<!--          <button id="button2">button2</button>-->
+        </div>
+        <div class="imageGrp"id="imageGrp3">
+          <img class="image" id="grandImage" src="images/grandcanyon.jpeg">
+<!--          <button id="button3">button3</button>-->
+        </div>
+      </div>
+        <div class="buttons-grp">
+          <button class="bottomBtn" id="button1">button1</button>
+          <button class="bottomBtn" id="button2">button2</button>
+          <button class="bottomBtn" id="button3">button3</button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function (){
+
+    /* 1st attempt for the exercise
+      - it did toggle the selected element
+      - but there would be too many repeating of same code
+     */
+// $('dt:nth-of-type(1)').on('click', function (){
+//   $('dd:nth-of-type(1)').toggleClass('invisible');
+// })
+// $('dt:nth-of-type(2)').on('click', function (){
+//   $('dd:nth-of-type(2)').toggleClass('invisible');
+// })
+
+    $('.QnA dd').slideUp();
+    $('.QnA dt').on( 'click',function(){
+      $(this).toggleClass('highlight')
+      let $dd = $(this).next('dd');
+      $('.QnA dd').not($dd).slideUp();
+      $dd.slideDown();
+      // $dd.toggleClass('invisible');  // the context will not show once I click back the element that was toggled already
+      $dd.removeClass('invisible');
+    })
+
+    $('#lightLast').on('click', function(){
+
+      $('ul').children().next().next().next().toggleClass('highlight');
+    })
+
+    $('h3').on('click',function (){
+      $(this).next().children().toggleClass('textBold');
+    })
+
+    $('li').on('click',function (){
+      $(this).parent().children().first().toggleClass('textBlue');
+    })
+
+
+    $('#button1').on('click', function (){
+      // $(this).toggleClass('reverse');
+      let wrapper = $('.images-groups').children().first();
+      wrapper.insertAfter(wrapper.next());
+      console.log("Button 1 clicked")
+    })
+    $('#button2').on('click', function (){
+
+      console.log("Button 2 clicked")
+      let wrapper = $('.images-groups').children().first().next();
+      const x = Math.floor(Math.random() * 2)+1;
+      if(x===1){
+        wrapper.insertBefore(wrapper.prev());
+      }else{
+        wrapper.insertAfter(wrapper.next());
+      }
+    })
+
+    $('#button3').on('click', function (){
+      // $(this).toggleClass('reverse');
+      let wrapper = $('.images-groups').children().last();
+      wrapper.insertBefore(wrapper.prev());
+      console.log("Button 3 clicked")
+    })
+  })
+
+</script>
+
+</body>
+</html>

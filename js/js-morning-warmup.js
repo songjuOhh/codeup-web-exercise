@@ -220,6 +220,179 @@ console.log(shiftElementsOver2(['bob', 'sally', 'mary']));
  *** for objects inside array ***
  */
 
+function sumUp (input){
+    let arrayN = [];
+
+}
+
+
+
+// const neighborhood1 = {
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "Elementary School", rating: 8},
+//         {name: "Middle School", rating: 6},
+//         {name: "High School", rating: 8}
+//     ]
+// };
+//
+// console.log(neighborhood1.schools[0].rating)
+
+// ================================= WARM UP
+
+const neighborhood1 = {
+    neighborhood: "Lovely Estates",
+    medianHomePrice: 280000,
+    pool: true,
+    tennis: false,
+    crimeRate: "low",
+    schools: [
+        {name: "Elementary School", rating: 8},
+        {name: "Middle School", rating: 6},
+        {name: "High School", rating: 8}
+    ]
+};
+
+const neighborhood2 = {
+    neighborhood: "Luminous Estates",
+    medianHomePrice: 270000,
+    pool: true,
+    tennis: false,
+    crimeRate: "high",
+    schools: [
+        {name: "Elementary School", rating: 8},
+        {name: "Middle School", rating: 8},
+        {name: "High School", rating: 8}
+    ]
+}
+
+const neighborhood3 = {
+    neighborhood: "Oak Mountain",
+    medianHomePrice: 290000,
+    pool: false,
+    tennis: false,
+    crimeRate: "low",
+    schools: [
+        {name: "Elementary School", rating: 8},
+        {name: "Middle School", rating: 8},
+        {name: "High School", rating: 8}
+    ]
+}
+
+const neighborhood4 = {
+    neighborhood: "Ginormous Acres",
+    medianHomePrice: 350000,
+    pool: true,
+    tennis: true,
+    crimeRate: "low",
+    schools: [
+        {name: "Elementary School", rating: 9},
+        {name: "Middle School", rating: 9},
+        {name: "High School", rating: 9}
+    ]
+}
+
+function isGoodPLace(array){
+    let rating=0, result;
+
+    for (let i = 0; i<array.schools.length; i++){
+        rating += array.schools[i].rating;
+    }
+    console.log(rating);
+
+
+    if(array.medianHomePrice < 300000 &&  rating >= 24 && array.crimeRate === "low"){
+        console.log('It is a good place to live');
+        result = true;
+    }else if(array.crimeRate === "high"){
+        console.log('Not qualified due to high crime rate');
+        result = false;
+    }else if(array.medianHomePrice > 300000){
+        console.log('Not qualified due to high house price');
+        result = false;
+    }else if(rating < 24 ){
+        console.log('Not qualified due to low average school ratings');
+        result = false;
+    }
+    return result;
+}
+console.log(isGoodPLace(neighborhood2));
+
+function removeA(input){
+    let array = [];
+    for (let i =0 ; i<input.length; i++){
+        if(input[i].toLowerCase() === 'a') {
+            array.push('@')
+        }else if(input[i].toLowerCase()=== 's'){
+            array.push('$')
+        }else if(input[i].toLowerCase()=== 'i'){
+            array.push('1')
+        }else{
+            array.push(input[i]);
+        }
+    }
+    array = array.join('')
+    return array;
+}
+console.log(removeA('spple'));
+
+
+
+function removeA2 (input){
+    let lowered = input.toLowerCase(), uppered = input.toUpperCase();
+    for (let i = 0; i < input.length; ) {
+        lowered = lowered.replaceAll('a', '@');
+        lowered = lowered.replaceAll('i', '1');
+        lowered = lowered.replaceAll('s', '$');
+    }
+    // lowered = lowered.replaceAll('a', '@');
+    // lowered = lowered.replaceAll('i', '1');
+    // lowered = lowered.replaceAll('s', '$');
+return lowered;
+}
+
+console.log(removeA2('appleii'))
+
+
+function removeA3 (input){
+    return input
+        .replace(/a/gi,"@")
+        .replace(/s/g,"$")
+        .replace(/i/gi, "1");
+}
+
+console.log(removeA3('sass'));
+
+// Create a function, encodeStr, that takes in a string and returns the string of characters with the following substitutions:
+//
+// ‘a’ or ‘A’ becomes ‘@’
+// ‘i’ or ‘I’ becomes ‘1’
+// ‘s’ or ‘S’ becomes ‘$’
+//
+// encodeStr(‘apple’) // returns ‘@pple’
+// encodeStr(‘codeup’) // returns ‘codeup’
+// encodeStr(‘SASS’) // returns ‘$@$$’
+// encodeStr(‘bike’) // returns ‘b1ke’
+
+// Write a function that takes a neighborhood object and determines if it is desirable.
+// A neighborhood is desirable if the median home price is less than 300000,
+// crime rates are low, and the total rating of schools is at least 24.
+
+// example data...
+
+
+//
+// fn(neighborhood1) // returns false due to school rating
+// fn(neighborhood2) // returns false due to crime rate
+// fn(neighborhood3) // returns true
+// fn(neighborhood4) // returns false due to median home price
+
+
+
 // Create a function, shiftElementsOver, that takes in an array and returns the array with all elements moved one index further into the array. The final element should be moved to the front. Assume the input array will have three or more elements.
 //
 //
@@ -285,8 +458,8 @@ console.log(shiftElementsOver2(['bob', 'sally', 'mary']));
 // }
 
 // desired output : 0, 1 ,2,  3, 4, 5, 6, 7, 8, 9
-let i =[1,2,3,4,5]
-console.log( i.length);
+// let i =[1,2,3,4,5]
+// console.log( i.length);
 
 
 

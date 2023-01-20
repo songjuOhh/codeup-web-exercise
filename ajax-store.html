@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://java.codeup.com/examples/javascript/ajax-store.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Online Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+
+            margin: 0;
+            padding: 0;
+            background: url(./images/tools.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+
+        .topPart{
+            display: flex;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 1em;
+            background: white;
+        }
+        .topLeft{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            height: 100%;
+            color: cornflowerblue;
+            background: white;
+        }
+        .topRight{
+            height: 100%;
+            width: 50%;
+            /*background-image: url("./images/tools.jpg");*/
+            /*background-attachment: fixed;*/
+            /*background-repeat: no-repeat;*/
+
+            /*animation-name: MOVE-BG;*/
+            animation-duration: 100s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        th{
+            color: cornflowerblue;
+            padding-left: 2em;
+        }
+        td{
+            margin-bottom: 1em;
+            padding-left: 2em;
+
+        }
+        button{
+        }
+
+        @keyframes MOVE-BG {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-187%);
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body class="">
+<nav style="background-color: transparent;">
+    <div class="container-fluid">
+    <h1 class="text-center text-white">My Tool Store</h1>
+    </div></nav>
+<!--<h1 class="text-center text-warning">My Tool Store</h1>-->
+
+<div class="container-fluid" >
+    <div class="row">
+
+        <div class="topPart">
+            <div class="topLeft">Explore our Tools</div>
+<!--            <div class="topRight"></div>-->
+        </div>
+        <div class="products-grp bg-white">
+            <table id="products">
+                <thead class="tHeading">
+                <tr>
+                    <th>Title</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Categories</th>
+                </tr>
+                </thead>
+                <tbody id="insertProducts">
+<!--                placeholder starts-->
+<!--                    <table>-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <td>${data[i].title}</td>-->
+<!--                            <td>${data[i].quantity}</td>-->
+<!--                            <td>$ ${data[i].price}</td>-->
+<!--                            <td>${data[i].categories}</td>-->
+<!--                        </tr>-->
+<!--                        <br>-->
+<!--                        </thead>-->
+<!--                    </table>-->
+<!--                placeholder ends-->
+
+                </tbody>
+            </table>
+        </div>
+        <div class="d-grid gap-2">
+            <button id="btn" onClick="window.location.reload();" class="btn btn-primary" type="button">Button</button>
+        </div>
+    </div>
+</div>
+
+
+<!--<script src="./js/jquery-3.6.3.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
+<script src="js/jquery-3.6.3.js"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+    function getInfo(){
+        $.get('./data/inventory.json').done(function(data){
+            // console.log(data[0].title)
+            let html = ''
+            for(let i=0; i<data.length; i++){
+                html+= `
+        <table>
+            <thead>
+                <tr>
+<!--                    <th>Title</th>-->
+                        <td>${data[i].title}</td>
+<!--                    <th>Quantity</th>-->
+                        <td>${data[i].quantity}</td>
+<!--                    <th>Price</th>-->
+                        <td>$ ${data[i].price}</td>
+<!--                    <th>Categories</th>-->
+                        <td>${data[i].categories}</td>
+                </tr>
+                <br>
+            </thead>
+        </table>`
+            }
+            $('#insertProducts').html(html);
+        })
+    }
+
+    getInfo();
+
+    $('#btn').on('click', function (){
+        getInfo();
+    })
+
+
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+</script>
+
+
+
+</body></html>
