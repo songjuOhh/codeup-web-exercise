@@ -1,0 +1,75 @@
+[
+  {
+    "restaurantName": "Seoul Food Korean Grill",
+    "image": "images/seoul-food.jpeg",
+    "address": "2456 Harry Wurzbach Rd, San Antonio, TX 78209",
+    "phoneNum": "210-476-5135",
+    "lat": -98.429527,
+    "long": 29.486555,
+    "openHour": [{
+      "day": "Mon",
+      "hours": "closed"},{
+      "day": "Tue",
+      "hours": "11am - 10pm"},{
+      "day": "Wed",
+      "hours": "11am - 10pm"},{
+      "day": "Thr",
+      "hours": "11am - 10pm"},{
+      "day": "Fri",
+      "hours": "11am - 10pm"},{
+      "day": "Sat",
+      "hours": "12pm - 10pm"},{
+      "day": "Sun",
+      "hours": "12pm - 10pm"
+    }]
+  },
+  {
+    "restaurantName": "Azro",
+    "image": "images/azro.png",
+    "address": "2211 NW Military Hwy #131, San Antonio, TX 78213",
+    "phoneNum": "210-342-0011",
+    "lat": -98.522642,
+    "long": 29.534725,
+    "openHour": [{
+      "day": "Mon",
+      "hours": "closed"},{
+      "day": "Tue",
+      "hours": "closed"},{
+      "day": "Wed",
+      "hours": "12pm - 8pm"},{
+      "day": "Thr",
+      "hours": "12pm - 8pm"},{
+      "day": "Fri",
+      "hours": "12pm - 8pm"},{
+      "day": "Sat",
+      "hours": "12pm - 8pm"},{
+      "day": "Sun",
+      "hours": "12pm - 8pm"
+    }]
+  },
+  {
+    "restaurantName": "2M Smokehouse",
+    "image": "images/2m.jpeg",
+    "address": "2731 S WW White Rd, San Antonio, TX 78222",
+    "phoneNum": "210-885-9352",
+    "lat": -98.40465,
+    "long": 29.38156,
+    "openHour": [{
+      "day": "Mon",
+      "hours": "closed"},{
+      "day": "Tue",
+      "hours": "closed"},{
+      "day": "Wed",
+      "hours": "closed"},{
+      "day": "Thr",
+      "hours": "11am - 4pm"},{
+      "day": "Fri",
+      "hours": "11am - 4pm"},{
+      "day": "Sat",
+      "hours": "11am - 4pm"},{
+      "day": "Sun",
+      "hours": "11am - 4pm"
+    }]
+  }
+]
+

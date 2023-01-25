@@ -384,6 +384,65 @@ console.log(removeA3('sass'));
 
 // example data...
 
+const strs = [
+    {
+        id: 1,
+        str: 'hello'
+    },
+    {
+        id: 2,
+        str: 'world'
+    }]
+
+function reverseStrings (array){
+    let reversed = array.split('')
+    console.log(reversed)    // return reversed;
+}
+
+console.log(reverseStrings(strs))
+
+// Make a function, reverseStrings, that takes in an array of objects and reverses the value of the 'str' properties.
+//
+//
+//     const strs = [
+//     {
+//         id: 1,
+//         str: 'hello'
+//     },
+//     {
+//         id: 2,
+//         str: 'world'
+//     },
+//     {
+//         id: 3,
+//         str: 'codeup'
+//     },
+//     {
+//         id: 4,
+//         str: 'x'
+//     }
+// ]
+//
+// reverseStrings(strs) // returns...
+//
+//     [
+//     {
+//         id: 1,
+//         str: 'olleh'
+//     },
+//         {
+//             id: 2,
+//             str: 'dlrow'
+//         },
+//         {
+//             id: 3,
+//             str: 'puedoc'
+//         },
+//         {
+//             id: 4,
+//             str: 'x'
+//         }
+//     ]
 
 //
 // fn(neighborhood1) // returns false due to school rating
