@@ -1,6 +1,7 @@
 
 "use strict";
 
+//html components for animated icons
 const cloudImages = {
     'Rain':  `<svg class="rain-cloud" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
         <path class="raindrop-one" d="M96,384c0,17.7,14.3,32,32,32s32-14.3,32-32s-32-64-32-64S96,366.3,96,384z" />
@@ -66,11 +67,7 @@ const cloudImages = {
 }
 
 
-
-
-
 mapboxgl.accessToken = keys.mapbox;
-
 
 
 // Setting default map screen on the screen
@@ -81,12 +78,11 @@ const map = new mapboxgl.Map({
     center: [-98.49, 29.42],
     zoom: 10
 });
+
+
+
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
-
-
-
-
 
 
 
@@ -95,9 +91,13 @@ map.addControl(new mapboxgl.NavigationControl());
 function createMarker(lng, lat){
     const marker = new mapboxgl.Marker({
         draggable:true})
-        // .remove()
         .setLngLat([lng, lat])
         .addTo(map);
+
+    $('#button-addon2').on('click', function (e) {
+        e.preventDefault();
+        marker.remove()
+    })
     marker.on('dragend', function() {
         var lngLat = marker.getLngLat();
         console.log(lngLat.lng, lngLat.lat);
@@ -115,14 +115,40 @@ function createMarker(lng, lat){
 createMarker(-98.49, 29.42);
 
 
+// Geocode
+function geocode(search, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+            // to get all the data from the request, comment out the following three lines...
+        }).then(function(data) {
+            return data.features[0].center;
+        });
+}
 
 
 
+// Reverse-Geocode
+function reverseGeocode(coordinates, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+        })
+        // to get all the data from the request, comment out the following three lines...
+        .then(function(data) {
+            return data.features[0].place_name;
+        });
+}
 
 
 
 // Weather Map Api //
 const OPEN_WEATHER_APPID = keys.weatherMap;
+
 
 // get weather on default //
 function getWeather(lon, lat) {
@@ -134,9 +160,12 @@ function getWeather(lon, lat) {
         })
 
             .done(function (data) {
+                // console.log( reverseGeocode(lon, lat))
                 console.log(data)
+
                 // can be used to get forecast conditions at current time in increments of 24 hours
-                let html = '', header=''; const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                // weather Forecast loop
+                let html = '', main='', location='';
                 for (let i = 0; i < data.list.length; i += 8) {
                     html += (`
                             <div class="card">
@@ -157,13 +186,45 @@ function getWeather(lon, lat) {
                                 </div>
                               </div>
                             `)
+
                 }
                 $('.card').html(html);
+
+                //reverse Geocode for location update
+                reverseGeocode({lng: lon, lat: lat}, keys.mapbox).then(function(results) {
+                    location += results.split(',').slice(1,2);
+                    console.log(location)
+                    $('.location').html(location);
+                    $('.city').html(location);
+                })
+
+
+                // Main page loop
+                for (let i = 0; i < 1; i += 1) {
+                    main += (`
+                    <div class="mainScreen">
+                        <div class="main-card">
+                          <div>Today's weather of</div>
+                          <div class="location"></div>
+                          <div class="temp-main"> ${data.list[i].main.temp.toFixed()} <span>°F</span></div>
+                          
+                          <div class="details">
+                            <h6 class="mx-2"><i class="bi bi-cloud-sun"></i> <span class="mx-2">${data.list[i].weather[0].description}</span></h6>
+                            <h6 class="mx-2"><i class="bi bi-droplet"></i> <span class="mx-2">${data.list[i].main.humidity}</span></h6>
+                            <h6 class="mx-2"><i class="bi bi-wind"></i> <span class="mx-2">${data.list[i].wind.speed} / ${data.list[i].wind.deg}°</span></h6>
+                            <h6 class="mx-2"><i class="bi bi-cloud-haze2"></i> <span class="mx-2">${data.list[i].main.pressure}</span></h6>
+                          </div>
+                        </div>
+                    </div>
+                           `)
+                }
+                $('.mainScreen').html(main);
             })
     }
-    getWeather(  -98.49,29.42);
 
 
+// set default weather on the page on first load
+getWeather(-98.49,29.42);
 
 
 
@@ -171,7 +232,6 @@ function getWeather(lon, lat) {
 function getWeatherFromSearch() {
 
     let address = $("#search-input").val();
-
     geocode(address, keys.mapbox).then(function (result) {
         console.log(result)
         map.flyTo({
@@ -179,10 +239,9 @@ function getWeatherFromSearch() {
             essential: true
         })
         getWeather(result[0], result[1]);
-        createMarker(result[0], result[1])
+        createMarker(result[0], result[1]);
     })
 }
-
 
 
 
@@ -193,6 +252,7 @@ $('#button-addon2').on('click',function (e){
     getWeatherFromSearch();
 })
 
+
 // by pressing Enter
 $('#search-input').on('keypress', function (e){
     if(e.key === "Enter"){
@@ -202,12 +262,12 @@ $('#search-input').on('keypress', function (e){
 })
 
 
-
+//onclick, the page zoom out
 map.on('click', function (e){
     e.preventDefault();
     map.flyTo({
         zoom:10,
-        essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        essential: true
     });
 })
 

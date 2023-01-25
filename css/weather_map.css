@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    /*background: rgba(9, 9, 52, 1);*/
     background: url(/images/night2.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -10,13 +9,25 @@ body {
     background-size: cover;
 }
 
+.city{
+    font-size: 16px;
+    color: yellow;
+}
+.location{
+    font-size: 20px;
+    color: yellow;
+}
+
 .page-wrapper{
     background: rgba(3, 3, 17,.7);
 }
 
 header{
-    background: rgba(3, 3, 17,.3);
     padding: .5em;
+}
+
+.top-bar{
+    background: rgba(3, 3, 17,1);
 }
 
 #map {
@@ -83,18 +94,43 @@ header{
 h6{
     font-size: 12px;
 }
-span{
-    font-weight: bold;
-}
+
 .logo:hover{
     color:yellow;
 }
 
+.mainScreen{
+}
 
+.main-card{
+    border: rgba(255, 255, 255, 0.2) solid 1px;
+    padding: 3em 5em 3em 5em;
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.temp-main {
+    font-size: 110px;
+    margin: 20px;
+}
+.temp-main span{
+    font-size: 50px;
+}
 
+.details{
+    display: flex;
+    flex-direction: row;
+}
+.details h6{
+    margin: 1em;
+    font-size: 14px;
+    font-style: normal;
+}
 
-
+/*CSS component for animated icons*/
 
 .stage {
     position: absolute;

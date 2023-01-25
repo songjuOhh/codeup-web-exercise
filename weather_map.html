@@ -34,10 +34,10 @@
 
   <div class="row">
   <header class="container-fluid ">
-    <div class="text-white g-0 px-2 d-flex flex-row justify-content-between fixed-top">
+    <div class="top-bar text-white g-0 px-2 d-flex flex-row justify-content-between fixed-top">
       <div class="logo column g-0 ">Weather App <i class="bi bi-globe-americas"></i></div>
       <div class="d-flex">
-        <div class="mx-1 fs-6"> Current city:</div>
+        <div class=" mx-1 fs-6"> Current city:</div>
         <div class="city fs-6"> San Antonio</div>
       </div>
     </div>
@@ -55,11 +55,19 @@
           </div>
         </div>
         <div class="mainScreen">
-          <div>Today's weather</div>
+          <div class="main-card">
+            <div>Today's weather of</div>
+            <div class="location"></div>
+            <div class="temp-main"> </div>
 
-
+            <div class="details">
+              <h6 class="mx-2"></h6>
+              <h6 class="mx-2"></h6>
+              <h6 class="mx-2"></h6>
+              <h6 class="mx-2"></h6>
+            </div>
+          </div>
         </div>
-
 
 
         <div class="d-flex justify-content-between " id="cards ">
@@ -68,7 +76,6 @@
               date yyyy-mm-dd
             </div>
             <div class="temp"> temperature 75.43 F</div>
-<!--            <img src="..." class="card-img-top" alt="...">-->
             <hr>
             <div class="card-body">
               <h6>Description</h6>
