@@ -203,6 +203,7 @@ function getWeather(lon, lat) {
                 for (let i = 0; i < 1; i += 1) {
                     main += (`
                     <div class="mainScreen">
+                    
                         <div class="main-card">
                           <div>Today's weather of</div>
                           <div class="location"></div>
@@ -266,10 +267,11 @@ $('#search-input').on('keypress', function (e){
 map.on('click', function (e){
     e.preventDefault();
     map.flyTo({
-        zoom:10,
+        zoom:5,
         essential: true
     });
 })
+
 
 
 

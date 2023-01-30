@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6</title>
+</head>
+<body>
+
+
+<script>
+    const name = 'Jason';
+    const fruits = ['banana', 'mango', 'orange'];
+    let array =[];
+    for (let element of name){
+        console.log(element)
+        array.push(element)
+    }
+    console.log(array)
+
+    let splitName = name.split('');
+    console.log(splitName)
+
+
+    for (let element of fruits){
+        console.log(element)
+    }
+
+// Regular condition function
+    function evenOdd(n){
+        let result;
+        if(n%2===0){
+            result = "even"
+        }else{
+            result = "odd"
+        }
+        return result;
+    }
+
+// Ternary function
+    function evenOdd2(n){
+        return (n%2===0) ? 'even': 'odd';
+    }
+
+// Arrow function
+    const evenOrOdd = (n) =>{
+        return (n%2===0) ? 'even': 'odd';
+    }
+
+// Arrow function #2
+    const evenOrOdd2 = (n) => (n%2===0)? 'even':'odd';
+
+
+    function helloWorld (name){
+        console.log(`Hello, ${name}`)
+    }
+
+    const helloWorld2 = (name) => {
+        console.log(`Hello, ${name}`);
+    }
+    helloWorld2('Songju');
+
+    const helloWorld3 = (name = "Songju") => {
+        console.log(`Hello, ${name}`);
+    }
+    helloWorld3();
+
+
+    const helloWorld4 = (name = "Andy Oh") => `Hello, ${name}`;
+    console.log( helloWorld4());
+
+
+
+    let name2 = 'Jason';
+    let fruits2 = ['banana', 'mango', 'orange'];
+
+    let user = {
+        name2,
+        fruits2
+    };
+    console.log(user);
+
+    // old way
+    var person = { name: 'codeup', age: 4 };
+    var name3 = person.name;
+    var age = person.age;
+    console.log(name3); // 'codeup'
+    console.log(age); // 4
+
+
+    // new way
+    const person2 = { name: 'codeup', age: 4 };
+    const { name4, age2 } = person2;
+    console.log(name4); // 'codeup'
+    console.log(age2); // 4
+
+
+    // old way
+    function tellMeAbout(person) {
+        let name = person.name;
+        let age = person.age;
+        console.log(name); // 'codeup'
+        console.log(age); // 4
+    }
+    const person3 = { name: 'codeup', age: 4 };
+    tellMeAbout(person3);
+
+
+    // new way
+    function tellMeAbout2({ name, age }) {
+        console.log(name); // 'codeup'
+        console.log(age); // 4
+    }
+    const person4 = { name: 'codeup', age: 4 };
+    tellMeAbout2(person4);
+
+
+    const users = [
+        {
+            name:'songju',
+            email: 'osj4129@gmail.com',
+            languages: ['java','php','sql']
+        },
+        {
+            name:'Teemo',
+            email: 'teemo@gmail.com',
+            languages: ['laugh','top','jungle']
+        }
+    ]
+
+    let otherUsers = [
+        {
+            name: 'Andy',
+            email: 'songju.oh1@gmail.com',
+            languages: ['java','php','javascript']
+        }
+    ];
+    console.log(otherUsers);
+
+    let newUserArray = [
+        ...users,
+        ...otherUsers
+    ]
+    console.log(newUserArray)
+
+    function combineArrays (arr1, arr2){
+        let combinedArray = [
+            ...arr1,
+            ...arr2
+        ]
+        return combinedArray;
+    }
+    console.log( combineArrays(users, otherUsers));
+
+
+    let numbers = [1,2,3,4,27,4,13];
+    console.log(Math.max(...numbers));
+
+    const personn = {name: 'codeup', age: 4};
+    // let personKeys = Object.keys(personn);
+    let{age,name} = personn;
+    let html = `
+    <h1>${name}</h1>
+    <p>${age}</p>
+    `;
+
+
+</script>
+
+
+<script type="module" src="js/JSII-es6-lesson.js"></script>
+
+</body>
+</html>
