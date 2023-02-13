@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESTful API</title>
+</head>
+<body>
+
+<script>
+    const blogPost = {title: 'Ajax Requests', body: 'Are a fun way to use JS!'};
+    const url = '/posts';
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(blogPost),
+    };
+    fetch(url, options)
+        .then(/* post was created successfully */)
+        .catch(/* handle errors */);
+
+</script>
+
+</body>
+</html>

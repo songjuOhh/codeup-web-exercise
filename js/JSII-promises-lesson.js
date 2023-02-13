@@ -1,6 +1,6 @@
 
 
-
+//
 // const myPromise = fetch('https://api.github.com/users');
 // myPromise.then(response => console.log(response));
 // myPromise.catch(error => console.error(error));
@@ -14,7 +14,7 @@ function getUser(){
         })
         .then(data =>{
             console.log('The fetch is complete')
-            // console.log(data)
+            console.log(data)
             return data;
         })
         .catch(error =>{
@@ -24,11 +24,13 @@ function getUser(){
 console.log('This happened after the fetch')
 
 
+
+
 async function getUsersAsync (){
     try{
         let response = await fetch('https://api.github.com/users'); //wait until it fetches
         let data = await response.json();  //wait until it gets the response from json
-        console.log(`Data is done inside of getUsersAsync =>`, data);
+        // console.log(`Data is done inside of getUsersAsync =>`, data);
         return data;   //can filter out the data, such as .map .reduce or such
     } catch (error){
 
@@ -63,16 +65,20 @@ fetch('https://api.github.com/users')
 
 
 
-//
-// const githubPromise = fetch('https://api.github.com/repositories');
-// const bitbucketPromise = fetch('https://api.bitbucket.org/2.0/repositories');
-//
-// Promise.all([githubPromise, bitbucketPromise])
-//     .then(function(data) {
-//         // here data is an array of the resolved values from each promise
-//         // we can now do something with both pieces of data
-//
-//     })
-//     .catch(function(error) {
-//         // handle errors
-//     });
+
+const githubPromise = fetch('https://api.github.com/repositories');
+const bitbucketPromise = fetch('https://api.bitbucket.org/2.0/repositories');
+
+Promise.all([githubPromise, bitbucketPromise])
+    .then(function(data) {
+        // here data is an array of the resolved values from each promise
+        // we can now do something with both pieces of data
+
+    })
+    .catch(function(error) {
+        // handle errors
+    });
+
+
+
+
